@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examples: include/XPlaneData.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Examples
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">XPlaneData.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_x_plane_data_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_air_sim_tools.html">AirSimTools</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_x_plane_data.html">    7</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html">XPlaneData</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_x_plane_data.html#a87b9231ad5aaa774d838207c40f299bc">    9</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a87b9231ad5aaa774d838207c40f299bc">Vtrue</a>; <span class="comment">// 地面空速 Vtrue（mph）</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_x_plane_data.html#a5ee7ce358fe3c4c1e020c0f4c6fcb8fa">   10</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a5ee7ce358fe3c4c1e020c0f4c6fcb8fa">angular_velocities</a>[3]; <span class="comment">// 角速度 Q(rad/s) P(rad/s) R(rad/s)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_x_plane_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">   11</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[3]; <span class="comment">// 欧拉角 pitch/theta(deg) roll/phi(deg) heading/psi(deg)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_x_plane_data.html#a4f10fb0ed88d01cb181bc3942f8ca0df">   12</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a4f10fb0ed88d01cb181bc3942f8ca0df">wind_angle</a>[2]; <span class="comment">// 气流角 alpha(deg) beta(deg)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_x_plane_data.html#a7f3b9651faa230662a6c8409d32c73de">   13</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a7f3b9651faa230662a6c8409d32c73de">BLH</a>[3]; <span class="comment">//纬经高 lat(deg) lon(deg) alt(ft)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_x_plane_data.html#afe353def5754714d65074667c454ecd0">   15</a></span>&#160;    <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#afe353def5754714d65074667c454ecd0">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html">XPlaneData</a>&amp; data)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        os &lt;&lt; <span class="stringliteral">&quot;BLH{&quot;</span> &lt;&lt; data.<a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a7f3b9651faa230662a6c8409d32c73de">BLH</a>[0] &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; data.<a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a7f3b9651faa230662a6c8409d32c73de">BLH</a>[1] &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; data.<a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a7f3b9651faa230662a6c8409d32c73de">BLH</a>[2] &lt;&lt; <span class="charliteral">&#39;}&#39;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;           &lt;&lt; <span class="stringliteral">&quot; PitchRollHeading{&quot;</span> &lt;&lt; data.<a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[0] &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; data.<a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[1] &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; data.<a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[2] &lt;&lt; <span class="charliteral">&#39;}&#39;</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
+<div class="ttc" id="anamespace_air_sim_tools_html"><div class="ttname"><a href="namespace_air_sim_tools.html">AirSimTools</a></div><div class="ttdoc">坐标转换函数</div><div class="ttdef"><b>Definition:</b> <a href="_calcu_anchor_point_8h_source.html#l00012">CalcuAnchorPoint.h:13</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_x_plane_data_html"><div class="ttname"><a href="struct_air_sim_tools_1_1_x_plane_data.html">AirSimTools::XPlaneData</a></div><div class="ttdoc">保存X-Plane数据的结构体</div><div class="ttdef"><b>Definition:</b> <a href="_x_plane_data_8h_source.html#l00007">XPlaneData.h:8</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_x_plane_data_html_a4f10fb0ed88d01cb181bc3942f8ca0df"><div class="ttname"><a href="struct_air_sim_tools_1_1_x_plane_data.html#a4f10fb0ed88d01cb181bc3942f8ca0df">AirSimTools::XPlaneData::wind_angle</a></div><div class="ttdeci">float wind_angle[2]</div><div class="ttdef"><b>Definition:</b> <a href="_x_plane_data_8h_source.html#l00012">XPlaneData.h:12</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_x_plane_data_html_a5ee7ce358fe3c4c1e020c0f4c6fcb8fa"><div class="ttname"><a href="struct_air_sim_tools_1_1_x_plane_data.html#a5ee7ce358fe3c4c1e020c0f4c6fcb8fa">AirSimTools::XPlaneData::angular_velocities</a></div><div class="ttdeci">float angular_velocities[3]</div><div class="ttdef"><b>Definition:</b> <a href="_x_plane_data_8h_source.html#l00010">XPlaneData.h:10</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_x_plane_data_html_a6ce5d84775b907dd50e9b8dd74deabd0"><div class="ttname"><a href="struct_air_sim_tools_1_1_x_plane_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">AirSimTools::XPlaneData::attitude</a></div><div class="ttdeci">float attitude[3]</div><div class="ttdef"><b>Definition:</b> <a href="_x_plane_data_8h_source.html#l00011">XPlaneData.h:11</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_x_plane_data_html_a7f3b9651faa230662a6c8409d32c73de"><div class="ttname"><a href="struct_air_sim_tools_1_1_x_plane_data.html#a7f3b9651faa230662a6c8409d32c73de">AirSimTools::XPlaneData::BLH</a></div><div class="ttdeci">float BLH[3]</div><div class="ttdef"><b>Definition:</b> <a href="_x_plane_data_8h_source.html#l00013">XPlaneData.h:13</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_x_plane_data_html_a87b9231ad5aaa774d838207c40f299bc"><div class="ttname"><a href="struct_air_sim_tools_1_1_x_plane_data.html#a87b9231ad5aaa774d838207c40f299bc">AirSimTools::XPlaneData::Vtrue</a></div><div class="ttdeci">float Vtrue</div><div class="ttdef"><b>Definition:</b> <a href="_x_plane_data_8h_source.html#l00009">XPlaneData.h:9</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_x_plane_data_html_afe353def5754714d65074667c454ecd0"><div class="ttname"><a href="struct_air_sim_tools_1_1_x_plane_data.html#afe353def5754714d65074667c454ecd0">AirSimTools::XPlaneData::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const XPlaneData &amp;data)</div><div class="ttdef"><b>Definition:</b> <a href="_x_plane_data_8h_source.html#l00015">XPlaneData.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examples: src/UE4Helper.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Examples
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">UE4Helper.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_u_e4_helper_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_u_e4_helper_8h.html">include/UE4Helper.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_rpc_client_getter_8h.html">include/RpcClientGetter.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma warning(disable : 4189)</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma warning(disable : 4305)</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_air_sim_tools.html">AirSimTools</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_u_e4_helper.html#a083eaf933d0c8ea675c3e4646bd92de2">   16</a></span>&#160;<a class="code" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a> <a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a083eaf933d0c8ea675c3e4646bd92de2">UE4Helper::AdaptPosition</a>(<span class="keyword">const</span> <a class="code" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a>&amp; flight_data, <span class="keywordtype">float</span> pitch_modified, <span class="keywordtype">float</span> roll_modified, <span class="keywordtype">float</span> yaw_modified)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a> flight_data_; <span class="comment">//修正过后的AirSim的NED坐标</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">float</span> theta_ = pitch_modified / 57.3f;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">float</span> phi_ = roll_modified / 57.3f;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">float</span> psi_ = yaw_modified / 57.3f;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">bool</span> ONLY_PSI = 1; <span class="comment">// 1 修正psi偏差模式 0 其他模式</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (ONLY_PSI) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[0] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[0] * cos(psi_) - flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[1] * sin(psi_);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[1] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[0] * sin(psi_) + flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[1] * cos(psi_);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[2] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[2];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[0] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[0];</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[1] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[1];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[2] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[2] + psi_;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a7f6717e5e5343ea6a441eaa121ac8d">orientation</a> = msr::airlib::VectorMath::toQuaternion(flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[0], flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[1], flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[2]);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="comment">//float x = flight_data.position[0];</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">//float y = flight_data.position[1];</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="comment">//float z = flight_data.position[2];</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="comment">//flight_data_.position[0] = x * cos(theta_) * cos(psi_) + y * (sin(phi_) * sin(theta_) * cos(psi_) - cos(phi_) * sin(psi_)) + z * (sin(phi_) * sin(psi_) + cos(phi_) * sin(theta_) * cos(psi_));</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">//flight_data_.position[1] = x * cos(theta_) * sin(psi_) + y * (sin(phi_) * sin(theta_) * sin(psi_) + cos(phi_) * cos(psi_)) + z * (-sin(phi_) * cos(psi_) + cos(phi_) * sin(theta_) * sin(psi_));</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="comment">//flight_data_.position[2] = -x * sin(theta_) + y * sin(phi_) * cos(theta_) + z * cos(phi_) * cos(theta_);</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="comment">//flight_data_.attitude[0] = flight_data.attitude[0] + theta_;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">//flight_data_.attitude[1] = flight_data.attitude[1] + phi_;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="comment">//flight_data_.attitude[2] = flight_data.attitude[2] + psi_;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[0] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[0];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[1] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[1];</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[2] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[2];</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[0] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[0];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[1] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[1];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[2] = flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[2];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a7f6717e5e5343ea6a441eaa121ac8d">orientation</a> = msr::airlib::VectorMath::toQuaternion(flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[0], flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[1], flight_data_.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[2]);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">//std::cout &lt;&lt; &quot;FlightData updated =&quot; &lt;&lt; flight_data_ &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> flight_data_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_u_e4_helper.html#a04550e6214480b0c1bdeb4755c99671d">   54</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a04550e6214480b0c1bdeb4755c99671d">UE4Helper::UpdatePosition</a>(<span class="keyword">const</span> <a class="code" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a>&amp; flight_data)</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    msr::airlib::Pose current_pose = msr::airlib::Pose(msr::airlib::Vector3r((<span class="keywordtype">float</span>)flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[0], (<span class="keywordtype">float</span>)flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[1], (<span class="keywordtype">float</span>)flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[2]), flight_data.<a class="code" href="struct_air_sim_tools_1_1_flight_data.html#a1a7f6717e5e5343ea6a441eaa121ac8d">orientation</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d">RpcClientGetter::Get</a>().simSetVehiclePose(current_pose, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<a class="code" href="struct_air_sim_tools_1_1_camera_data.html">CameraData</a> UE4Helper::getCameraInfo(<span class="keyword">const</span> std::string&amp; camera_name)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="struct_air_sim_tools_1_1_camera_data.html">CameraData</a> camera_data;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//CameraInfo CameraInfo_;</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//CameraInfo_ = RpcClientGetter::Get().simGetCameraInfo(&quot;ExternalCamera&quot;);</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;fov = &quot; &lt;&lt; CameraInfo_.fov &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;position = &quot; &lt;&lt; CameraInfo_.pose.position &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;orientation = &quot; &lt;&lt; CameraInfo_.pose.orientation &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a89b30a19837a7208749aea6430412be4">Pose</a> Pose_;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    msr::airlib::real_T pitch_; <span class="comment">// float</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    msr::airlib::real_T roll_;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    msr::airlib::real_T yaw_;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    Pose_ = <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d">RpcClientGetter::Get</a>().simGetObjectPose(camera_name);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    msr::airlib::VectorMath::toEulerianAngle(Pose_.orientation, pitch_, roll_, yaw_);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[0] = Pose_.position[0];</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[1] = Pose_.position[1];</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">position</a>[2] = Pose_.position[2];</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[0] = pitch_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[1] = roll_;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">attitude</a>[2] = yaw_;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a1a7f6717e5e5343ea6a441eaa121ac8d">orientation</a>.x() = Pose_.orientation.x();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a1a7f6717e5e5343ea6a441eaa121ac8d">orientation</a>.y() = Pose_.orientation.y();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a1a7f6717e5e5343ea6a441eaa121ac8d">orientation</a>.z() = Pose_.orientation.z();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    camera_data.<a class="code" href="struct_air_sim_tools_1_1_camera_data.html#a1a7f6717e5e5343ea6a441eaa121ac8d">orientation</a>.w() = Pose_.orientation.w();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;position = &quot; &lt;&lt; Pose_.position &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;orientation = &quot; &lt;&lt; Pose_.orientation &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> camera_data;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_u_e4_helper.html#a710fc7faf57ce0f93d43693ff5ddd8a6">   89</a></span>&#160;<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html">UE4Helper::ImageCaptureResult</a> <a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a710fc7faf57ce0f93d43693ff5ddd8a6">UE4Helper::CaptureGroundCameraImage</a>(<a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a5162774ca1d767dc007cf341143df701">CameraMode</a> camera_mode)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html">ImageCaptureResult</a> image_capture_result;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::vector&lt;ImageRequest&gt; request;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    msr::airlib::ClockBase* clock = msr::airlib::ClockFactory::get(); <span class="comment">//工厂模式，仅初始化一次clock，功能与单例模式类似</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">auto</span> start_nanos = clock-&gt;nowNanos(); <span class="comment">//开始计时</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">switch</span> (camera_mode) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a5162774ca1d767dc007cf341143df701a09e8a613980d3ae8db0af8aa6d13efa9">CameraMode::origin_mode</a>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        request.push_back(<a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a28047302bb88ea332dd351851e70c2d7">ImageRequest</a>(<span class="stringliteral">&quot;front_left&quot;</span>, ImageType::Scene, <span class="keyword">false</span>, <span class="keyword">false</span>));</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        image_capture_result.<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a6161491fb39aa43b546e7a0b736c5380">response</a> = <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d">RpcClientGetter::Get</a>().simGetImages(request); <span class="comment">// 使用rpc获取图片</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">case</span> <a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a5162774ca1d767dc007cf341143df701acb8b5ce4d7f41f291a52b95b1c9d5953">CameraMode::ground_mode</a>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        request.push_back(<a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a28047302bb88ea332dd351851e70c2d7">ImageRequest</a>(<span class="stringliteral">&quot;ExternalCamera&quot;</span>, ImageType::Scene, <span class="keyword">false</span>, <span class="keyword">false</span>));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        image_capture_result.<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a6161491fb39aa43b546e7a0b736c5380">response</a> = <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d">RpcClientGetter::Get</a>().simExternalImages(request);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">double</span> render_time_temp = clock-&gt;elapsedSince(start_nanos); <span class="comment">//停止计时</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;render_time: &quot; &lt;&lt; render_time_temp * 1E3f &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl; // 显示渲染时间（图片获取时间）</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    image_capture_result.<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a66572fe1f770353b465514d94e070571">render_time</a> = render_time_temp;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> image_capture_result;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_u_e4_helper.html#a2c829381b8aed33a69a03d9cc582f593">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a2c829381b8aed33a69a03d9cc582f593">UE4Helper::ProcessCameraImage</a>(<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html">ImageCaptureResult</a>&amp; image_capture_result)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    msr::airlib::ClockBase* clock = msr::airlib::ClockFactory::get(); <span class="comment">//工厂模式，仅初始化一次clock，功能与单例模式类似</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">auto</span> start_nanos = clock-&gt;nowNanos();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; image_data = image_capture_result.<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a6161491fb39aa43b546e7a0b736c5380">response</a>.at(0).image_data_uint8;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">double</span> render_time_temp = clock-&gt;elapsedSince(start_nanos);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">//std::cout &lt;&lt; &quot;render time = &quot; &lt;&lt; render_time_temp * 1E3f &lt;&lt; &quot; ms&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_u_e4_helper.html#a2a81371aad623296a39be3d812c991f4">  121</a></span>&#160;std::vector&lt;uchar&gt; <a class="code" href="class_air_sim_tools_1_1_u_e4_helper.html#a2a81371aad623296a39be3d812c991f4">UE4Helper::ImageEncoder</a>(<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html">ImageCaptureResult</a>&amp; image_capture_result)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">int</span> Width = image_capture_result.<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a6161491fb39aa43b546e7a0b736c5380">response</a>.at(0).width;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">int</span> Height = image_capture_result.<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a6161491fb39aa43b546e7a0b736c5380">response</a>.at(0).height;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::vector&lt;uchar&gt; encoded_image(Width * Height * 3);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    cv::Mat cv_image(Height, Width, CV_8UC(4));</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">int</span> idx = 0;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; Height; x++) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; Width; y++) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            cv_image.at&lt;cv::Vec4b&gt;(x, y)[0] = image_capture_result.<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a6161491fb39aa43b546e7a0b736c5380">response</a>.at(0).image_data_uint8[idx]; <span class="comment">//B</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            cv_image.at&lt;cv::Vec4b&gt;(x, y)[1] = image_capture_result.<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a6161491fb39aa43b546e7a0b736c5380">response</a>.at(0).image_data_uint8[idx + 1]; <span class="comment">//G</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            cv_image.at&lt;cv::Vec4b&gt;(x, y)[2] = image_capture_result.<a class="code" href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a6161491fb39aa43b546e7a0b736c5380">response</a>.at(0).image_data_uint8[idx + 2]; <span class="comment">//R</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            cv_image.at&lt;cv::Vec4b&gt;(x, y)[3] = 0; <span class="comment">//alpha</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            idx += 3;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    vector&lt;int&gt; encode_param = vector&lt;int&gt;(2);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    encode_param[0] = CV_IMWRITE_JPEG_QUALITY;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    encode_param[1] = 70;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> (cv_image.data) <span class="comment">//防止图片内容为空，导致opencv错误</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="comment">//cv::imshow(&quot;pic-origin&quot;, cv_image);</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="comment">//cv::waitKey(1);</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        cv::imencode(<span class="stringliteral">&quot;.jpg&quot;</span>, cv_image, encoded_image, encode_param);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> encoded_image;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
+<div class="ttc" id="a_rpc_client_getter_8h_html"><div class="ttname"><a href="_rpc_client_getter_8h.html">RpcClientGetter.h</a></div></div>
+<div class="ttc" id="a_u_e4_helper_8h_html"><div class="ttname"><a href="_u_e4_helper_8h.html">UE4Helper.h</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_rpc_client_getter_html_a8ce16e16a2ce45041b2e74cefb75ed3d"><div class="ttname"><a href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d">AirSimTools::RpcClientGetter::Get</a></div><div class="ttdeci">static msr::airlib::MultirotorRpcLibClient &amp; Get()</div><div class="ttdoc">返回client实例</div><div class="ttdef"><b>Definition:</b> <a href="_rpc_client_getter_8cpp_source.html#l00014">RpcClientGetter.cpp:14</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a04550e6214480b0c1bdeb4755c99671d"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a04550e6214480b0c1bdeb4755c99671d">AirSimTools::UE4Helper::UpdatePosition</a></div><div class="ttdeci">void UpdatePosition(const FlightData &amp;flight_data)</div><div class="ttdoc">更新无人机位置</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8cpp_source.html#l00054">UE4Helper.cpp:54</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a083eaf933d0c8ea675c3e4646bd92de2"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a083eaf933d0c8ea675c3e4646bd92de2">AirSimTools::UE4Helper::AdaptPosition</a></div><div class="ttdeci">FlightData AdaptPosition(const FlightData &amp;flight_data, float pitch_modified=-4.6510f, float roll_modified=0.0639f, float yaw_modified=-120.7494f+90.0f - 62.6383f)</div><div class="ttdoc">校正UE4地图航向误差</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8cpp_source.html#l00016">UE4Helper.cpp:16</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a28047302bb88ea332dd351851e70c2d7"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a28047302bb88ea332dd351851e70c2d7">AirSimTools::UE4Helper::ImageRequest</a></div><div class="ttdeci">msr::airlib::ImageCaptureBase::ImageRequest ImageRequest</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8h_source.html#l00027">UE4Helper.h:27</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a2a81371aad623296a39be3d812c991f4"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a2a81371aad623296a39be3d812c991f4">AirSimTools::UE4Helper::ImageEncoder</a></div><div class="ttdeci">std::vector&lt; uchar &gt; ImageEncoder(ImageCaptureResult &amp;image_capture_result)</div><div class="ttdoc">使用opencv进行图片编码</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8cpp_source.html#l00121">UE4Helper.cpp:121</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a2c829381b8aed33a69a03d9cc582f593"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a2c829381b8aed33a69a03d9cc582f593">AirSimTools::UE4Helper::ProcessCameraImage</a></div><div class="ttdeci">void ProcessCameraImage(ImageCaptureResult &amp;image_capture_result)</div><div class="ttdoc">处理相机图片</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8cpp_source.html#l00112">UE4Helper.cpp:112</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a5162774ca1d767dc007cf341143df701"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a5162774ca1d767dc007cf341143df701">AirSimTools::UE4Helper::CameraMode</a></div><div class="ttdeci">CameraMode</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8h_source.html#l00043">UE4Helper.h:44</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a5162774ca1d767dc007cf341143df701a09e8a613980d3ae8db0af8aa6d13efa9"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a5162774ca1d767dc007cf341143df701a09e8a613980d3ae8db0af8aa6d13efa9">AirSimTools::UE4Helper::CameraMode::origin_mode</a></div><div class="ttdeci">@ origin_mode</div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a5162774ca1d767dc007cf341143df701acb8b5ce4d7f41f291a52b95b1c9d5953"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a5162774ca1d767dc007cf341143df701acb8b5ce4d7f41f291a52b95b1c9d5953">AirSimTools::UE4Helper::CameraMode::ground_mode</a></div><div class="ttdeci">@ ground_mode</div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a710fc7faf57ce0f93d43693ff5ddd8a6"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a710fc7faf57ce0f93d43693ff5ddd8a6">AirSimTools::UE4Helper::CaptureGroundCameraImage</a></div><div class="ttdeci">ImageCaptureResult CaptureGroundCameraImage(CameraMode camera_mode)</div><div class="ttdoc">获取相机图片</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8cpp_source.html#l00089">UE4Helper.cpp:89</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_u_e4_helper_html_a89b30a19837a7208749aea6430412be4"><div class="ttname"><a href="class_air_sim_tools_1_1_u_e4_helper.html#a89b30a19837a7208749aea6430412be4">AirSimTools::UE4Helper::Pose</a></div><div class="ttdeci">msr::airlib::Pose Pose</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8h_source.html#l00026">UE4Helper.h:26</a></div></div>
+<div class="ttc" id="anamespace_air_sim_tools_html"><div class="ttname"><a href="namespace_air_sim_tools.html">AirSimTools</a></div><div class="ttdoc">坐标转换函数</div><div class="ttdef"><b>Definition:</b> <a href="_calcu_anchor_point_8h_source.html#l00012">CalcuAnchorPoint.h:13</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_camera_data_html"><div class="ttname"><a href="struct_air_sim_tools_1_1_camera_data.html">AirSimTools::CameraData</a></div><div class="ttdoc">保存相机位置和姿态的结构体</div><div class="ttdef"><b>Definition:</b> <a href="_camera_data_8h_source.html#l00008">CameraData.h:9</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_camera_data_html_a1a3ca0a0bf0cdb13a8689c0558ead4df"><div class="ttname"><a href="struct_air_sim_tools_1_1_camera_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">AirSimTools::CameraData::position</a></div><div class="ttdeci">float position[3]</div><div class="ttdef"><b>Definition:</b> <a href="_camera_data_8h_source.html#l00011">CameraData.h:11</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_camera_data_html_a1a7f6717e5e5343ea6a441eaa121ac8d"><div class="ttname"><a href="struct_air_sim_tools_1_1_camera_data.html#a1a7f6717e5e5343ea6a441eaa121ac8d">AirSimTools::CameraData::orientation</a></div><div class="ttdeci">msr::airlib::Quaternionr orientation</div><div class="ttdef"><b>Definition:</b> <a href="_camera_data_8h_source.html#l00012">CameraData.h:12</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_camera_data_html_a6ce5d84775b907dd50e9b8dd74deabd0"><div class="ttname"><a href="struct_air_sim_tools_1_1_camera_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">AirSimTools::CameraData::attitude</a></div><div class="ttdeci">float attitude[3]</div><div class="ttdef"><b>Definition:</b> <a href="_camera_data_8h_source.html#l00010">CameraData.h:10</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_flight_data_html"><div class="ttname"><a href="struct_air_sim_tools_1_1_flight_data.html">AirSimTools::FlightData</a></div><div class="ttdoc">保存飞行器位置和姿态的结构体</div><div class="ttdef"><b>Definition:</b> <a href="_flight_data_8h_source.html#l00008">FlightData.h:9</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_flight_data_html_a1a3ca0a0bf0cdb13a8689c0558ead4df"><div class="ttname"><a href="struct_air_sim_tools_1_1_flight_data.html#a1a3ca0a0bf0cdb13a8689c0558ead4df">AirSimTools::FlightData::position</a></div><div class="ttdeci">float position[3]</div><div class="ttdef"><b>Definition:</b> <a href="_flight_data_8h_source.html#l00010">FlightData.h:10</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_flight_data_html_a1a7f6717e5e5343ea6a441eaa121ac8d"><div class="ttname"><a href="struct_air_sim_tools_1_1_flight_data.html#a1a7f6717e5e5343ea6a441eaa121ac8d">AirSimTools::FlightData::orientation</a></div><div class="ttdeci">msr::airlib::Quaternionr orientation</div><div class="ttdef"><b>Definition:</b> <a href="_flight_data_8h_source.html#l00012">FlightData.h:12</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_flight_data_html_a6ce5d84775b907dd50e9b8dd74deabd0"><div class="ttname"><a href="struct_air_sim_tools_1_1_flight_data.html#a6ce5d84775b907dd50e9b8dd74deabd0">AirSimTools::FlightData::attitude</a></div><div class="ttdeci">float attitude[3]</div><div class="ttdef"><b>Definition:</b> <a href="_flight_data_8h_source.html#l00011">FlightData.h:11</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result_html"><div class="ttname"><a href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html">AirSimTools::UE4Helper::ImageCaptureResult</a></div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8h_source.html#l00032">UE4Helper.h:33</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result_html_a6161491fb39aa43b546e7a0b736c5380"><div class="ttname"><a href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a6161491fb39aa43b546e7a0b736c5380">AirSimTools::UE4Helper::ImageCaptureResult::response</a></div><div class="ttdeci">std::vector&lt; ImageResponse &gt; response</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8h_source.html#l00034">UE4Helper.h:34</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result_html_a66572fe1f770353b465514d94e070571"><div class="ttname"><a href="struct_air_sim_tools_1_1_u_e4_helper_1_1_image_capture_result.html#a66572fe1f770353b465514d94e070571">AirSimTools::UE4Helper::ImageCaptureResult::render_time</a></div><div class="ttdeci">msr::airlib::TTimeDelta render_time</div><div class="ttdef"><b>Definition:</b> <a href="_u_e4_helper_8h_source.html#l00035">UE4Helper.h:35</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

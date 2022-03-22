@@ -1,0 +1,605 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examples: Network类 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Examples
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_air_sim_tools.html">AirSimTools</a></li><li class="navelem"><a class="el" href="class_air_sim_tools_1_1_network.html">Network</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="class_air_sim_tools_1_1_network-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">Network类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>用于通信的工具人  
+ <a href="class_air_sim_tools_1_1_network.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_network_8h_source.html">Network.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:af7ef1f7e331f6c287495a1e642c36029"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_air_sim_tools_1_1_network.html#af7ef1f7e331f6c287495a1e642c36029">UDPInitial</a> (std::string ip_addr, u_short port)</td></tr>
+<tr class="memdesc:af7ef1f7e331f6c287495a1e642c36029"><td class="mdescLeft">&#160;</td><td class="mdescRight">初始化UDP，创建套接字，绑定端口  <a href="class_air_sim_tools_1_1_network.html#af7ef1f7e331f6c287495a1e642c36029">更多...</a><br /></td></tr>
+<tr class="separator:af7ef1f7e331f6c287495a1e642c36029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6640f096eae1d000a1dbd3a7d6e39ee8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8">UDPReceive</a> (std::string ip_addr, u_short port, std::vector&lt; char &gt; &amp;recv_buff, SOCKADDR &amp;sender_addr)</td></tr>
+<tr class="memdesc:a6640f096eae1d000a1dbd3a7d6e39ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用UDP接收数据的函数  <a href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8">更多...</a><br /></td></tr>
+<tr class="separator:a6640f096eae1d000a1dbd3a7d6e39ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9374417f9d2022da59cd246a73ad0a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_air_sim_tools_1_1_network.html#ae9374417f9d2022da59cd246a73ad0a7">UDPReceive</a> (std::string ip_addr, u_short port, std::vector&lt; char &gt; &amp;recv_buff)</td></tr>
+<tr class="memdesc:ae9374417f9d2022da59cd246a73ad0a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用UDP接收数据的函数（重载）  <a href="class_air_sim_tools_1_1_network.html#ae9374417f9d2022da59cd246a73ad0a7">更多...</a><br /></td></tr>
+<tr class="separator:ae9374417f9d2022da59cd246a73ad0a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89bbf6c2cead1f84c133a3347cb880c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_air_sim_tools_1_1_network.html#a89bbf6c2cead1f84c133a3347cb880c9">UDPSend</a> (std::string ip_addr, u_short port, std::vector&lt; char &gt; &amp;recv_buff, SOCKADDR &amp;sender_addr)</td></tr>
+<tr class="memdesc:a89bbf6c2cead1f84c133a3347cb880c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用UDP发送数据的函数  <a href="class_air_sim_tools_1_1_network.html#a89bbf6c2cead1f84c133a3347cb880c9">更多...</a><br /></td></tr>
+<tr class="separator:a89bbf6c2cead1f84c133a3347cb880c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ab1af8080b80f9efb0b4d781592280e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_air_sim_tools_1_1_network.html#a5ab1af8080b80f9efb0b4d781592280e">UDPSend</a> (std::string ip_addr, u_short port, std::vector&lt; char &gt; &amp;recv_buff)</td></tr>
+<tr class="memdesc:a5ab1af8080b80f9efb0b4d781592280e"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用UDP发送数据的函数（重载）  <a href="class_air_sim_tools_1_1_network.html#a5ab1af8080b80f9efb0b4d781592280e">更多...</a><br /></td></tr>
+<tr class="separator:a5ab1af8080b80f9efb0b4d781592280e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43fe1ce5e6fcacc9fdd30001bbe1f315"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_air_sim_tools_1_1_network.html#a43fe1ce5e6fcacc9fdd30001bbe1f315">Network::TCPSend</a> (std::string ip_addr, u_short port, std::vector&lt; uchar &gt; &amp;tcp_send_data, int image_index, <a class="el" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a> flight_data, <a class="el" href="struct_air_sim_tools_1_1_camera_data.html">CameraData</a> camera_data)</td></tr>
+<tr class="memdesc:a43fe1ce5e6fcacc9fdd30001bbe1f315"><td class="mdescLeft">&#160;</td><td class="mdescRight">提供图源数据的TCP服务端  <a href="class_air_sim_tools_1_1_network.html#a43fe1ce5e6fcacc9fdd30001bbe1f315">更多...</a><br /></td></tr>
+<tr class="separator:a43fe1ce5e6fcacc9fdd30001bbe1f315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a094e622e3e57450402750d2e41e94166"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_air_sim_tools_1_1_network.html#a094e622e3e57450402750d2e41e94166">DecodeByteMATLAB</a> (std::vector&lt; char &gt; &amp;recv_buff)</td></tr>
+<tr class="memdesc:a094e622e3e57450402750d2e41e94166"><td class="mdescLeft">&#160;</td><td class="mdescRight">UDP通信解帧函数（来自Matlab的UDP模块）  <a href="class_air_sim_tools_1_1_network.html#a094e622e3e57450402750d2e41e94166">更多...</a><br /></td></tr>
+<tr class="separator:a094e622e3e57450402750d2e41e94166"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61fe7bfac74360ed13ade75896f185e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_air_sim_tools_1_1_x_plane_data.html">XPlaneData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_air_sim_tools_1_1_network.html#a61fe7bfac74360ed13ade75896f185e9">Network::DecodeByteXPlane</a> (std::vector&lt; char &gt; &amp;recv_buff)</td></tr>
+<tr class="memdesc:a61fe7bfac74360ed13ade75896f185e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">UDP通信解帧函数（来自X-Plane）  <a href="class_air_sim_tools_1_1_network.html#a61fe7bfac74360ed13ade75896f185e9">更多...</a><br /></td></tr>
+<tr class="separator:a61fe7bfac74360ed13ade75896f185e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:acf6ad082b1de4e32635268edb2e06846"><td class="memItemLeft" align="right" valign="top"><a class="el" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_air_sim_tools_1_1_network.html#acf6ad082b1de4e32635268edb2e06846">UDPSrvSock</a></td></tr>
+<tr class="separator:acf6ad082b1de4e32635268edb2e06846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>用于通信的工具人 </p>
+
+<p class="definition">在文件 <a class="el" href="_network_8h_source.html">Network.h</a> 第 <a class="el" href="_network_8h_source.html#l00049">49</a> 行定义.</p>
+</div><h2 class="groupheader">成员函数说明</h2>
+<a id="a094e622e3e57450402750d2e41e94166"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a094e622e3e57450402750d2e41e94166">&#9670;&nbsp;</a></span>DecodeByteMATLAB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a> DecodeByteMATLAB </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>recv_buff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UDP通信解帧函数（来自Matlab的UDP模块） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">recv_buff</td><td>接收到的UDP缓存数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">待办事项:</a></b></dt><dd>优化：功能增加 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_network_8cpp_source.html">Network.cpp</a> 第 <a class="el" href="_network_8cpp_source.html#l00127">127</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_a094e622e3e57450402750d2e41e94166_icgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_a094e622e3e57450402750d2e41e94166_icgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_a094e622e3e57450402750d2e41e94166_icgraph" id="aclass_air_sim_tools_1_1_network_a094e622e3e57450402750d2e41e94166_icgraph">
+<area shape="rect" title="UDP通信解帧函数（来自Matlab的UDP模块）" alt="" coords="319,5,464,32"/>
+<area shape="rect" href="main_8cpp.html#afc54a0e6c1feb8e06dc2a814e391600e" title=" " alt="" coords="104,5,271,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a61fe7bfac74360ed13ade75896f185e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61fe7bfac74360ed13ade75896f185e9">&#9670;&nbsp;</a></span>Network::DecodeByteXPlane()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_air_sim_tools_1_1_x_plane_data.html">XPlaneData</a> Network::DecodeByteXPlane </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>recv_buff</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UDP通信解帧函数（来自X-Plane） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">recv_buff</td><td>接收到的UDP缓存数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>XPlaneData结构体 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_a61fe7bfac74360ed13ade75896f185e9_cgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_a61fe7bfac74360ed13ade75896f185e9_cgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_a61fe7bfac74360ed13ade75896f185e9_cgraph" id="aclass_air_sim_tools_1_1_network_a61fe7bfac74360ed13ade75896f185e9_cgraph">
+<area shape="rect" title="UDP通信解帧函数（来自X&#45;Plane）" alt="" coords="5,29,193,56"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_a61fe7bfac74360ed13ade75896f185e9_icgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_a61fe7bfac74360ed13ade75896f185e9_icgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_a61fe7bfac74360ed13ade75896f185e9_icgraph" id="aclass_air_sim_tools_1_1_network_a61fe7bfac74360ed13ade75896f185e9_icgraph">
+<area shape="rect" title="UDP通信解帧函数（来自X&#45;Plane）" alt="" coords="5,29,193,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a43fe1ce5e6fcacc9fdd30001bbe1f315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43fe1ce5e6fcacc9fdd30001bbe1f315">&#9670;&nbsp;</a></span>Network::TCPSend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Network::TCPSend </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ip_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_short&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uchar &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tcp_send_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>image_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a>&#160;</td>
+          <td class="paramname"><em>flight_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_air_sim_tools_1_1_camera_data.html">CameraData</a>&#160;</td>
+          <td class="paramname"><em>camera_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>提供图源数据的TCP服务端 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip_addr</td><td>客户端的IP地址 </td></tr>
+    <tr><td class="paramname">port</td><td>客户端的端口 </td></tr>
+    <tr><td class="paramname">tcp_send_data</td><td>需要发送的数据 </td></tr>
+    <tr><td class="paramname">image_index</td><td>图片索引 </td></tr>
+    <tr><td class="paramname">flight_data</td><td>飞行器位姿数据 </td></tr>
+    <tr><td class="paramname">camera_data</td><td>相机外参数据 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">待办事项:</a></b></dt><dd>现在TCP建立链接与发送数据未分开 </dd></dl>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_a43fe1ce5e6fcacc9fdd30001bbe1f315_cgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_a43fe1ce5e6fcacc9fdd30001bbe1f315_cgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_a43fe1ce5e6fcacc9fdd30001bbe1f315_cgraph" id="aclass_air_sim_tools_1_1_network_a43fe1ce5e6fcacc9fdd30001bbe1f315_cgraph">
+<area shape="rect" title="提供图源数据的TCP服务端" alt="" coords="5,29,137,56"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_a43fe1ce5e6fcacc9fdd30001bbe1f315_icgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_a43fe1ce5e6fcacc9fdd30001bbe1f315_icgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_a43fe1ce5e6fcacc9fdd30001bbe1f315_icgraph" id="aclass_air_sim_tools_1_1_network_a43fe1ce5e6fcacc9fdd30001bbe1f315_icgraph">
+<area shape="rect" title="提供图源数据的TCP服务端" alt="" coords="5,29,137,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af7ef1f7e331f6c287495a1e642c36029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ef1f7e331f6c287495a1e642c36029">&#9670;&nbsp;</a></span>UDPInitial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPInitial </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ip_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_short&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>初始化UDP，创建套接字，绑定端口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip_addr</td><td>需要绑定的IP地址 </td></tr>
+    <tr><td class="paramname">port</td><td>需要绑定的端口 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="_network_8cpp_source.html">Network.cpp</a> 第 <a class="el" href="_network_8cpp_source.html#l00015">15</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_af7ef1f7e331f6c287495a1e642c36029_icgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_af7ef1f7e331f6c287495a1e642c36029_icgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_af7ef1f7e331f6c287495a1e642c36029_icgraph" id="aclass_air_sim_tools_1_1_network_af7ef1f7e331f6c287495a1e642c36029_icgraph">
+<area shape="rect" title="初始化UDP，创建套接字，绑定端口" alt="" coords="461,56,540,83"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8" title="使用UDP接收数据的函数" alt="" coords="319,56,413,83"/>
+<area shape="rect" href="main_8cpp.html#afc54a0e6c1feb8e06dc2a814e391600e" title=" " alt="" coords="104,5,271,32"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#ae9374417f9d2022da59cd246a73ad0a7" title="使用UDP接收数据的函数（重载）" alt="" coords="140,56,235,83"/>
+<area shape="rect" href="main_8cpp.html#a9565535bbf7ab38cc0a18e68b12dc214" title=" " alt="" coords="105,107,270,133"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae9374417f9d2022da59cd246a73ad0a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9374417f9d2022da59cd246a73ad0a7">&#9670;&nbsp;</a></span>UDPReceive() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPReceive </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ip_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_short&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>recv_buff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>使用UDP接收数据的函数（重载） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip_addr</td><td>数据来源端的IP地址 </td></tr>
+    <tr><td class="paramname">port</td><td>数据来源端的端口 </td></tr>
+    <tr><td class="paramname">recv_buff</td><td>接收UDP数据的缓存容器 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="_network_8h_source.html">Network.h</a> 第 <a class="el" href="_network_8h_source.html#l00071">71</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_ae9374417f9d2022da59cd246a73ad0a7_cgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_ae9374417f9d2022da59cd246a73ad0a7_cgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_ae9374417f9d2022da59cd246a73ad0a7_cgraph" id="aclass_air_sim_tools_1_1_network_ae9374417f9d2022da59cd246a73ad0a7_cgraph">
+<area shape="rect" title="使用UDP接收数据的函数（重载）" alt="" coords="5,5,100,32"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8" title="使用UDP接收数据的函数" alt="" coords="148,5,243,32"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#af7ef1f7e331f6c287495a1e642c36029" title="初始化UDP，创建套接字，绑定端口" alt="" coords="291,5,369,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6640f096eae1d000a1dbd3a7d6e39ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6640f096eae1d000a1dbd3a7d6e39ee8">&#9670;&nbsp;</a></span>UDPReceive() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPReceive </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ip_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_short&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>recv_buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SOCKADDR &amp;&#160;</td>
+          <td class="paramname"><em>sender_addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用UDP接收数据的函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip_addr</td><td>数据来源端的IP地址 </td></tr>
+    <tr><td class="paramname">port</td><td>数据来源端的端口 </td></tr>
+    <tr><td class="paramname">recv_buff</td><td>接收UDP数据的缓存容器 </td></tr>
+    <tr><td class="paramname">sender_addr</td><td>用于确认发送端的ip，缺省即可（Structure used by kernel to store most addresses） </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">待办事项:</a></b></dt><dd>现在建立链接与发送数据未分开 </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="_network_8cpp_source.html">Network.cpp</a> 第 <a class="el" href="_network_8cpp_source.html#l00040">40</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_a6640f096eae1d000a1dbd3a7d6e39ee8_cgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_a6640f096eae1d000a1dbd3a7d6e39ee8_cgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_a6640f096eae1d000a1dbd3a7d6e39ee8_cgraph" id="aclass_air_sim_tools_1_1_network_a6640f096eae1d000a1dbd3a7d6e39ee8_cgraph">
+<area shape="rect" title="使用UDP接收数据的函数" alt="" coords="5,5,100,32"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#af7ef1f7e331f6c287495a1e642c36029" title="初始化UDP，创建套接字，绑定端口" alt="" coords="148,5,227,32"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_a6640f096eae1d000a1dbd3a7d6e39ee8_icgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_a6640f096eae1d000a1dbd3a7d6e39ee8_icgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_a6640f096eae1d000a1dbd3a7d6e39ee8_icgraph" id="aclass_air_sim_tools_1_1_network_a6640f096eae1d000a1dbd3a7d6e39ee8_icgraph">
+<area shape="rect" title="使用UDP接收数据的函数" alt="" coords="319,56,413,83"/>
+<area shape="rect" href="main_8cpp.html#afc54a0e6c1feb8e06dc2a814e391600e" title=" " alt="" coords="104,5,271,32"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#ae9374417f9d2022da59cd246a73ad0a7" title="使用UDP接收数据的函数（重载）" alt="" coords="140,56,235,83"/>
+<area shape="rect" href="main_8cpp.html#a9565535bbf7ab38cc0a18e68b12dc214" title=" " alt="" coords="105,107,270,133"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5ab1af8080b80f9efb0b4d781592280e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ab1af8080b80f9efb0b4d781592280e">&#9670;&nbsp;</a></span>UDPSend() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPSend </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ip_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_short&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>recv_buff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>使用UDP发送数据的函数（重载） </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip_addr</td><td>目标IP </td></tr>
+    <tr><td class="paramname">port</td><td>目标端口 </td></tr>
+    <tr><td class="paramname">recv_buff</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="_network_8h_source.html">Network.h</a> 第 <a class="el" href="_network_8h_source.html#l00087">87</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_a5ab1af8080b80f9efb0b4d781592280e_cgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_a5ab1af8080b80f9efb0b4d781592280e_cgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_a5ab1af8080b80f9efb0b4d781592280e_cgraph" id="aclass_air_sim_tools_1_1_network_a5ab1af8080b80f9efb0b4d781592280e_cgraph">
+<area shape="rect" title="使用UDP发送数据的函数（重载）" alt="" coords="5,5,84,32"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a89bbf6c2cead1f84c133a3347cb880c9" title="使用UDP发送数据的函数" alt="" coords="132,5,211,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a89bbf6c2cead1f84c133a3347cb880c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89bbf6c2cead1f84c133a3347cb880c9">&#9670;&nbsp;</a></span>UDPSend() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UDPSend </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>ip_addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u_short&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; char &gt; &amp;&#160;</td>
+          <td class="paramname"><em>recv_buff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SOCKADDR &amp;&#160;</td>
+          <td class="paramname"><em>sender_addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用UDP发送数据的函数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ip_addr</td><td>目标IP </td></tr>
+    <tr><td class="paramname">port</td><td>目标端口 </td></tr>
+    <tr><td class="paramname">recv_buff</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>创建套接字失败处理</p>
+
+<p class="definition">在文件 <a class="el" href="_network_8cpp_source.html">Network.cpp</a> 第 <a class="el" href="_network_8cpp_source.html#l00053">53</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_air_sim_tools_1_1_network_a89bbf6c2cead1f84c133a3347cb880c9_icgraph.png" border="0" usemap="#aclass_air_sim_tools_1_1_network_a89bbf6c2cead1f84c133a3347cb880c9_icgraph" alt=""/></div>
+<map name="aclass_air_sim_tools_1_1_network_a89bbf6c2cead1f84c133a3347cb880c9_icgraph" id="aclass_air_sim_tools_1_1_network_a89bbf6c2cead1f84c133a3347cb880c9_icgraph">
+<area shape="rect" title="使用UDP发送数据的函数" alt="" coords="317,31,396,57"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a5ab1af8080b80f9efb0b4d781592280e" title="使用UDP发送数据的函数（重载）" alt="" coords="147,5,226,32"/>
+<area shape="rect" href="main_8cpp.html#a9565535bbf7ab38cc0a18e68b12dc214" title=" " alt="" coords="104,56,269,83"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,56,56,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="acf6ad082b1de4e32635268edb2e06846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6ad082b1de4e32635268edb2e06846">&#9670;&nbsp;</a></span>UDPSrvSock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a> UDPSrvSock</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="_network_8h_source.html">Network.h</a> 第 <a class="el" href="_network_8h_source.html#l00052">52</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>include/<a class="el" href="_network_8h_source.html">Network.h</a></li>
+<li>src/<a class="el" href="_network_8cpp_source.html">Network.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examples: main.cpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Examples
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">main.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &quot;common/common_utils/FileSystem.hpp&quot;</code><br />
+<code>#include &quot;<a class="el" href="_calcu_anchor_point_8h_source.html">include/CalcuAnchorPoint.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_l_b_h2_n_e_d_8h_source.html">include/LBH2NED.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_network_8h_source.html">include/Network.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_rpc_client_getter_8h_source.html">include/RpcClientGetter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_u_e4_helper_8h_source.html">include/UE4Helper.h</a>&quot;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+main.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#amain_8cpp" alt=""/></div>
+<map name="amain_8cpp" id="amain_8cpp">
+<area shape="rect" title=" " alt="" coords="1503,5,1578,32"/>
+<area shape="rect" title=" " alt="" coords="526,244,598,271"/>
+<area shape="rect" title=" " alt="" coords="1546,80,1601,107"/>
+<area shape="rect" title=" " alt="" coords="1626,80,1706,107"/>
+<area shape="rect" title=" " alt="" coords="2038,155,2195,196"/>
+<area shape="rect" href="_calcu_anchor_point_8h.html" title=" " alt="" coords="917,80,1100,107"/>
+<area shape="rect" href="_l_b_h2_n_e_d_8h.html" title=" " alt="" coords="168,80,305,107"/>
+<area shape="rect" href="_network_8h.html" title=" " alt="" coords="443,80,568,107"/>
+<area shape="rect" href="_rpc_client_getter_8h.html" title=" " alt="" coords="1730,80,1900,107"/>
+<area shape="rect" href="_u_e4_helper_8h.html" title=" " alt="" coords="1330,80,1470,107"/>
+<area shape="rect" title=" " alt="" coords="1924,80,1986,107"/>
+<area shape="rect" title=" " alt="" coords="2010,80,2073,107"/>
+<area shape="rect" title=" " alt="" coords="2098,80,2156,107"/>
+<area shape="rect" title=" " alt="" coords="874,244,1028,271"/>
+<area shape="rect" href="_camera_data_8h.html" title=" " alt="" coords="820,162,970,189"/>
+<area shape="rect" href="_flight_data_8h.html" title=" " alt="" coords="493,162,630,189"/>
+<area shape="rect" title=" " alt="" coords="654,162,744,189"/>
+<area shape="rect" title=" " alt="" coords="1430,162,1546,189"/>
+<area shape="rect" title=" " alt="" coords="1046,162,1198,189"/>
+<area shape="rect" title=" " alt="" coords="1222,162,1406,189"/>
+<area shape="rect" href="_x_plane_data_8h.html" title=" " alt="" coords="106,162,252,189"/>
+<area shape="rect" title=" " alt="" coords="26,162,82,189"/>
+<area shape="rect" title=" " alt="" coords="378,162,468,189"/>
+<area shape="rect" title=" " alt="" coords="276,162,354,189"/>
+<area shape="rect" title=" " alt="" coords="2220,155,2418,196"/>
+<area shape="rect" title=" " alt="" coords="2442,155,2617,196"/>
+<area shape="rect" title=" " alt="" coords="2642,162,2700,189"/>
+<area shape="rect" title=" " alt="" coords="1622,162,1832,189"/>
+<area shape="rect" title=" " alt="" coords="1856,155,2014,196"/>
+</map>
+</div>
+</div>
+<p><a href="main_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a525335710b53cb064ca56b936120431e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a525335710b53cb064ca56b936120431e">_USE_MATH_DEFINES</a></td></tr>
+<tr class="separator:a525335710b53cb064ca56b936120431e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a1fdd8c693d7b59a43582748322752e7f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a> = <a class="el" href="class_air_sim_tools_1_1_u_e4_helper.html">AirSimTools::UE4Helper</a></td></tr>
+<tr class="separator:a1fdd8c693d7b59a43582748322752e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36789f3a8960224de6ba3daabc6a12a7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a> = <a class="el" href="class_air_sim_tools_1_1_network.html">AirSimTools::Network</a></td></tr>
+<tr class="separator:a36789f3a8960224de6ba3daabc6a12a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff57282392bc323de65af79c4e7825d0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aff57282392bc323de65af79c4e7825d0">RpcClientGetter</a> = <a class="el" href="class_air_sim_tools_1_1_rpc_client_getter.html">AirSimTools::RpcClientGetter</a></td></tr>
+<tr class="separator:aff57282392bc323de65af79c4e7825d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac2165fe5688300e51d5fee8ce194df"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0ac2165fe5688300e51d5fee8ce194df">BLH2XYZ</a> = <a class="el" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html">AirSimTools::BLH2XYZ</a></td></tr>
+<tr class="separator:a0ac2165fe5688300e51d5fee8ce194df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af67c62bb69ef6a19cc93c54ca0a5b58c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> = <a class="el" href="struct_air_sim_tools_1_1_flight_data.html">AirSimTools::FlightData</a></td></tr>
+<tr class="separator:af67c62bb69ef6a19cc93c54ca0a5b58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada18c10530090c1071892124c654fea8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ada18c10530090c1071892124c654fea8">CameraData</a> = <a class="el" href="struct_air_sim_tools_1_1_camera_data.html">AirSimTools::CameraData</a></td></tr>
+<tr class="separator:ada18c10530090c1071892124c654fea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2e5d3ee637c857b25cc4fe6864297f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3d2e5d3ee637c857b25cc4fe6864297f">XPlaneData</a> = <a class="el" href="struct_air_sim_tools_1_1_x_plane_data.html">AirSimTools::XPlaneData</a></td></tr>
+<tr class="separator:a3d2e5d3ee637c857b25cc4fe6864297f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af78926c672662ced2a8f9ac70c781c86"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af78926c672662ced2a8f9ac70c781c86">FileSystem</a> = common_utils::FileSystem</td></tr>
+<tr class="separator:af78926c672662ced2a8f9ac70c781c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6130fe6a1dc44f02fa6a8a433ae62afa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a6130fe6a1dc44f02fa6a8a433ae62afa">AnchorPoint</a> = <a class="el" href="class_air_sim_tools_1_1_calcu_anchor_point.html">AirSimTools::CalcuAnchorPoint</a></td></tr>
+<tr class="separator:a6130fe6a1dc44f02fa6a8a433ae62afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:afc54a0e6c1feb8e06dc2a814e391600e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afc54a0e6c1feb8e06dc2a814e391600e">matlab_flight_data_mode</a> (<a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a> network, std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt; flight_data, std::shared_ptr&lt; std::mutex &gt; mtx_ptr)</td></tr>
+<tr class="separator:afc54a0e6c1feb8e06dc2a814e391600e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9565535bbf7ab38cc0a18e68b12dc214"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a9565535bbf7ab38cc0a18e68b12dc214">xplane_flight_data_mode</a> (<a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a> ue4_helper, <a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a> network, std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt; flight_data, std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt; flight_data_updated, std::shared_ptr&lt; std::mutex &gt; mtx_ptr)</td></tr>
+<tr class="separator:a9565535bbf7ab38cc0a18e68b12dc214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0a3ed396225860a089a59051daba0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aea0a3ed396225860a089a59051daba0c">update_position</a> (<a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a> ue4_helper, std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt; flight_data, std::shared_ptr&lt; std::mutex &gt; mtx_ptr)</td></tr>
+<tr class="separator:aea0a3ed396225860a089a59051daba0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a743e225aa696c3df21af032a93536c88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a743e225aa696c3df21af032a93536c88">update_position_local_mode</a> (<a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a> ue4_helper, std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt; flight_data_updated, std::shared_ptr&lt; std::mutex &gt; mtx_ptr)</td></tr>
+<tr class="separator:a743e225aa696c3df21af032a93536c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53e20780502ee29e529c8de83bf35967"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a53e20780502ee29e529c8de83bf35967">update_position_fixed_point</a> (<a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a> ue4_helper, std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt; flight_data_updated, std::shared_ptr&lt; std::mutex &gt; mtx_ptr)</td></tr>
+<tr class="separator:a53e20780502ee29e529c8de83bf35967"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49413968bc7fb288c69dfb65ad28c9dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a49413968bc7fb288c69dfb65ad28c9dd">send_image</a> (<a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a> network, <a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a> ue4_helper, std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt; flight_data_updated)</td></tr>
+<tr class="separator:a49413968bc7fb288c69dfb65ad28c9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bd5c31faa3cf563a723989446ed7f61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0bd5c31faa3cf563a723989446ed7f61">save_image</a> (<a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a> network, <a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a> ue4_helper, <a class="el" href="main_8cpp.html#a6130fe6a1dc44f02fa6a8a433ae62afa">AnchorPoint</a> anchor_point, std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt; flight_data_updated)</td></tr>
+<tr class="separator:a0bd5c31faa3cf563a723989446ed7f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a525335710b53cb064ca56b936120431e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a525335710b53cb064ca56b936120431e">&#9670;&nbsp;</a></span>_USE_MATH_DEFINES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _USE_MATH_DEFINES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00005">5</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a6130fe6a1dc44f02fa6a8a433ae62afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6130fe6a1dc44f02fa6a8a433ae62afa">&#9670;&nbsp;</a></span>AnchorPoint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="main_8cpp.html#a6130fe6a1dc44f02fa6a8a433ae62afa">AnchorPoint</a> =  <a class="el" href="class_air_sim_tools_1_1_calcu_anchor_point.html">AirSimTools::CalcuAnchorPoint</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00025">25</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0ac2165fe5688300e51d5fee8ce194df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac2165fe5688300e51d5fee8ce194df">&#9670;&nbsp;</a></span>BLH2XYZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="main_8cpp.html#a0ac2165fe5688300e51d5fee8ce194df">BLH2XYZ</a> =  <a class="el" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html">AirSimTools::BLH2XYZ</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00020">20</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ada18c10530090c1071892124c654fea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada18c10530090c1071892124c654fea8">&#9670;&nbsp;</a></span>CameraData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="main_8cpp.html#ada18c10530090c1071892124c654fea8">CameraData</a> =  <a class="el" href="struct_air_sim_tools_1_1_camera_data.html">AirSimTools::CameraData</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00022">22</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af78926c672662ced2a8f9ac70c781c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af78926c672662ced2a8f9ac70c781c86">&#9670;&nbsp;</a></span>FileSystem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="main_8cpp.html#af78926c672662ced2a8f9ac70c781c86">FileSystem</a> =  common_utils::FileSystem</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00024">24</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af67c62bb69ef6a19cc93c54ca0a5b58c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67c62bb69ef6a19cc93c54ca0a5b58c">&#9670;&nbsp;</a></span>FlightData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> =  <a class="el" href="struct_air_sim_tools_1_1_flight_data.html">AirSimTools::FlightData</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00021">21</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a36789f3a8960224de6ba3daabc6a12a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36789f3a8960224de6ba3daabc6a12a7">&#9670;&nbsp;</a></span>Network</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a> =  <a class="el" href="class_air_sim_tools_1_1_network.html">AirSimTools::Network</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00018">18</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aff57282392bc323de65af79c4e7825d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff57282392bc323de65af79c4e7825d0">&#9670;&nbsp;</a></span>RpcClientGetter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="main_8cpp.html#aff57282392bc323de65af79c4e7825d0">RpcClientGetter</a> =  <a class="el" href="class_air_sim_tools_1_1_rpc_client_getter.html">AirSimTools::RpcClientGetter</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00019">19</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1fdd8c693d7b59a43582748322752e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fdd8c693d7b59a43582748322752e7f">&#9670;&nbsp;</a></span>UE4Helper</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a> =  <a class="el" href="class_air_sim_tools_1_1_u_e4_helper.html">AirSimTools::UE4Helper</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00017">17</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3d2e5d3ee637c857b25cc4fe6864297f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d2e5d3ee637c857b25cc4fe6864297f">&#9670;&nbsp;</a></span>XPlaneData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="_l_b_h2_n_e_d_8h.html#a3d2e5d3ee637c857b25cc4fe6864297f">XPlaneData</a> =  <a class="el" href="struct_air_sim_tools_1_1_x_plane_data.html">AirSimTools::XPlaneData</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00023">23</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00198">198</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="amain_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,335,56,362"/>
+<area shape="rect" href="main_8cpp.html#afc54a0e6c1feb8e06dc2a814e391600e" title=" " alt="" coords="114,78,281,105"/>
+<area shape="rect" href="main_8cpp.html#a0bd5c31faa3cf563a723989446ed7f61" title=" " alt="" coords="152,449,243,475"/>
+<area shape="rect" href="main_8cpp.html#a49413968bc7fb288c69dfb65ad28c9dd" title=" " alt="" coords="151,507,243,534"/>
+<area shape="rect" href="main_8cpp.html#aea0a3ed396225860a089a59051daba0c" title=" " alt="" coords="141,277,254,303"/>
+<area shape="rect" href="main_8cpp.html#a53e20780502ee29e529c8de83bf35967" title=" " alt="" coords="124,328,271,369"/>
+<area shape="rect" href="main_8cpp.html#a743e225aa696c3df21af032a93536c88" title=" " alt="" coords="104,394,291,421"/>
+<area shape="rect" href="main_8cpp.html#a9565535bbf7ab38cc0a18e68b12dc214" title=" " alt="" coords="115,217,280,243"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a094e622e3e57450402750d2e41e94166" title="UDP通信解帧函数（来自Matlab的UDP模块）" alt="" coords="361,5,514,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8" title="使用UDP接收数据的函数" alt="" coords="364,71,511,112"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#af7ef1f7e331f6c287495a1e642c36029" title="初始化UDP，创建套接字，绑定端口" alt="" coords="621,71,768,112"/>
+<area shape="rect" href="class_air_sim_tools_1_1_calcu_anchor_point.html#aa9706843a63d9eda8702988edf461545" title="计算锚点UV" alt="" coords="345,565,530,607"/>
+<area shape="rect" href="class_air_sim_tools_1_1_calcu_anchor_point.html#a415863004ff239f1b31d3947b85112fd" title="计算平动矩阵" alt="" coords="607,456,782,497"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a710fc7faf57ce0f93d43693ff5ddd8a6" title="获取相机图片" alt="" coords="339,500,536,541"/>
+<area shape="rect" href="namespace_air_sim_tools.html#a1930205490d9cccbe62851ab7327031d" title=" " alt="" coords="364,398,511,425"/>
+<area shape="rect" href="class_air_sim_tools_1_1_calcu_anchor_point.html#a7629c804b535ba6dacf674d1f4b151e0" title="计算内参矩阵" alt="" coords="607,616,782,657"/>
+<area shape="rect" href="class_air_sim_tools_1_1_calcu_anchor_point.html#a783416b777bb25bbc3c8b30d3a4fc809" title="计算旋转矩阵" alt="" coords="607,551,782,592"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="584,365,805,391"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="853,357,1045,399"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a2a81371aad623296a39be3d812c991f4" title="使用opencv进行图片编码" alt="" coords="356,631,519,672"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a083eaf933d0c8ea675c3e4646bd92de2" title="校正UE4地图航向误差" alt="" coords="356,267,519,308"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a04550e6214480b0c1bdeb4755c99671d" title="更新无人机位置" alt="" coords="356,332,519,373"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#ab46364669d52257b1d23cbb5f1960baf" title="经纬高BLH转北东下坐标系" alt="" coords="360,136,515,177"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a89bbf6c2cead1f84c133a3347cb880c9" title="使用UDP发送数据的函数" alt="" coords="364,201,511,243"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#aed2eb62f85287be415e65056a2a3ddd6" title="BLH &#45;&gt; ENU" alt="" coords="617,136,772,177"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a258ee3029b870dcc4eedea2a3caec883" title="BLH &#45;&gt; ECEF" alt="" coords="872,136,1027,177"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a96dee2e1bc682db1c4a293c34929b111" title="y 軸を軸とした回転行列" alt="" coords="872,201,1027,243"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a2ebd1cf92257898eae09a45a12a7257b" title="z 軸を軸とした回転行列" alt="" coords="872,267,1027,308"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a27c418e2c44748e9f6e839c249595aca" title="2行列(3x3)の積" alt="" coords="872,5,1027,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#aeea561573fd36ed830a8e187e4d10240" title="座標の回転" alt="" coords="872,71,1027,112"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a927694c350b26693c65f7c8b73b3dba3" title="関数 N" alt="" coords="1093,143,1264,170"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afc54a0e6c1feb8e06dc2a814e391600e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc54a0e6c1feb8e06dc2a814e391600e">&#9670;&nbsp;</a></span>matlab_flight_data_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void matlab_flight_data_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a>&#160;</td>
+          <td class="paramname"><em>network</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt;&#160;</td>
+          <td class="paramname"><em>flight_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; std::mutex &gt;&#160;</td>
+          <td class="paramname"><em>mtx_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00027">27</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_afc54a0e6c1feb8e06dc2a814e391600e_cgraph.png" border="0" usemap="#amain_8cpp_afc54a0e6c1feb8e06dc2a814e391600e_cgraph" alt=""/></div>
+<map name="amain_8cpp_afc54a0e6c1feb8e06dc2a814e391600e_cgraph" id="amain_8cpp_afc54a0e6c1feb8e06dc2a814e391600e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,46,172,73"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a094e622e3e57450402750d2e41e94166" title="UDP通信解帧函数（来自Matlab的UDP模块）" alt="" coords="220,5,373,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8" title="使用UDP接收数据的函数" alt="" coords="223,71,370,112"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#af7ef1f7e331f6c287495a1e642c36029" title="初始化UDP，创建套接字，绑定端口" alt="" coords="421,71,568,112"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_afc54a0e6c1feb8e06dc2a814e391600e_icgraph.png" border="0" usemap="#amain_8cpp_afc54a0e6c1feb8e06dc2a814e391600e_icgraph" alt=""/></div>
+<map name="amain_8cpp_afc54a0e6c1feb8e06dc2a814e391600e_icgraph" id="amain_8cpp_afc54a0e6c1feb8e06dc2a814e391600e_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,271,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0bd5c31faa3cf563a723989446ed7f61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bd5c31faa3cf563a723989446ed7f61">&#9670;&nbsp;</a></span>save_image()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void save_image </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a>&#160;</td>
+          <td class="paramname"><em>network</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a>&#160;</td>
+          <td class="paramname"><em>ue4_helper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a6130fe6a1dc44f02fa6a8a433ae62afa">AnchorPoint</a>&#160;</td>
+          <td class="paramname"><em>anchor_point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt;&#160;</td>
+          <td class="paramname"><em>flight_data_updated</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00138">138</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a0bd5c31faa3cf563a723989446ed7f61_cgraph.png" border="0" usemap="#amain_8cpp_a0bd5c31faa3cf563a723989446ed7f61_cgraph" alt=""/></div>
+<map name="amain_8cpp_a0bd5c31faa3cf563a723989446ed7f61_cgraph" id="amain_8cpp_a0bd5c31faa3cf563a723989446ed7f61_cgraph">
+<area shape="rect" title=" " alt="" coords="5,173,96,199"/>
+<area shape="rect" href="class_air_sim_tools_1_1_calcu_anchor_point.html#aa9706843a63d9eda8702988edf461545" title="计算锚点UV" alt="" coords="150,75,335,116"/>
+<area shape="rect" href="class_air_sim_tools_1_1_calcu_anchor_point.html#a415863004ff239f1b31d3947b85112fd" title="计算平动矩阵" alt="" coords="413,136,587,177"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a710fc7faf57ce0f93d43693ff5ddd8a6" title="获取相机图片" alt="" coords="144,195,341,236"/>
+<area shape="rect" href="namespace_air_sim_tools.html#a1930205490d9cccbe62851ab7327031d" title=" " alt="" coords="169,261,316,287"/>
+<area shape="rect" href="class_air_sim_tools_1_1_calcu_anchor_point.html#a7629c804b535ba6dacf674d1f4b151e0" title="计算内参矩阵" alt="" coords="413,5,587,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_calcu_anchor_point.html#a783416b777bb25bbc3c8b30d3a4fc809" title="计算旋转矩阵" alt="" coords="413,71,587,112"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="389,202,611,229"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="659,195,851,236"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a0bd5c31faa3cf563a723989446ed7f61_icgraph.png" border="0" usemap="#amain_8cpp_a0bd5c31faa3cf563a723989446ed7f61_icgraph" alt=""/></div>
+<map name="amain_8cpp_a0bd5c31faa3cf563a723989446ed7f61_icgraph" id="amain_8cpp_a0bd5c31faa3cf563a723989446ed7f61_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,195,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a49413968bc7fb288c69dfb65ad28c9dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49413968bc7fb288c69dfb65ad28c9dd">&#9670;&nbsp;</a></span>send_image()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void send_image </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a>&#160;</td>
+          <td class="paramname"><em>network</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a>&#160;</td>
+          <td class="paramname"><em>ue4_helper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt;&#160;</td>
+          <td class="paramname"><em>flight_data_updated</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00122">122</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a49413968bc7fb288c69dfb65ad28c9dd_cgraph.png" border="0" usemap="#amain_8cpp_a49413968bc7fb288c69dfb65ad28c9dd_cgraph" alt=""/></div>
+<map name="amain_8cpp_a49413968bc7fb288c69dfb65ad28c9dd_cgraph" id="amain_8cpp_a49413968bc7fb288c69dfb65ad28c9dd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,46,97,73"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a710fc7faf57ce0f93d43693ff5ddd8a6" title="获取相机图片" alt="" coords="145,5,343,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a2a81371aad623296a39be3d812c991f4" title="使用opencv进行图片编码" alt="" coords="163,71,325,112"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="391,13,612,39"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="660,5,852,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a49413968bc7fb288c69dfb65ad28c9dd_icgraph.png" border="0" usemap="#amain_8cpp_a49413968bc7fb288c69dfb65ad28c9dd_icgraph" alt=""/></div>
+<map name="amain_8cpp_a49413968bc7fb288c69dfb65ad28c9dd_icgraph" id="amain_8cpp_a49413968bc7fb288c69dfb65ad28c9dd_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,196,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aea0a3ed396225860a089a59051daba0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0a3ed396225860a089a59051daba0c">&#9670;&nbsp;</a></span>update_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update_position </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a>&#160;</td>
+          <td class="paramname"><em>ue4_helper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt;&#160;</td>
+          <td class="paramname"><em>flight_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; std::mutex &gt;&#160;</td>
+          <td class="paramname"><em>mtx_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00060">60</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_aea0a3ed396225860a089a59051daba0c_cgraph.png" border="0" usemap="#amain_8cpp_aea0a3ed396225860a089a59051daba0c_cgraph" alt=""/></div>
+<map name="amain_8cpp_aea0a3ed396225860a089a59051daba0c_cgraph" id="amain_8cpp_aea0a3ed396225860a089a59051daba0c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,46,119,73"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a083eaf933d0c8ea675c3e4646bd92de2" title="校正UE4地图航向误差" alt="" coords="167,5,329,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a04550e6214480b0c1bdeb4755c99671d" title="更新无人机位置" alt="" coords="167,71,329,112"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="377,78,599,105"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="647,71,839,112"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_aea0a3ed396225860a089a59051daba0c_icgraph.png" border="0" usemap="#amain_8cpp_aea0a3ed396225860a089a59051daba0c_icgraph" alt=""/></div>
+<map name="amain_8cpp_aea0a3ed396225860a089a59051daba0c_icgraph" id="amain_8cpp_aea0a3ed396225860a089a59051daba0c_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,217,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a53e20780502ee29e529c8de83bf35967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53e20780502ee29e529c8de83bf35967">&#9670;&nbsp;</a></span>update_position_fixed_point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update_position_fixed_point </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a>&#160;</td>
+          <td class="paramname"><em>ue4_helper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt;&#160;</td>
+          <td class="paramname"><em>flight_data_updated</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; std::mutex &gt;&#160;</td>
+          <td class="paramname"><em>mtx_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00106">106</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a53e20780502ee29e529c8de83bf35967_cgraph.png" border="0" usemap="#amain_8cpp_a53e20780502ee29e529c8de83bf35967_cgraph" alt=""/></div>
+<map name="amain_8cpp_a53e20780502ee29e529c8de83bf35967_cgraph" id="amain_8cpp_a53e20780502ee29e529c8de83bf35967_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,152,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a04550e6214480b0c1bdeb4755c99671d" title="更新无人机位置" alt="" coords="200,5,363,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="411,13,632,39"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="680,5,872,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a53e20780502ee29e529c8de83bf35967_icgraph.png" border="0" usemap="#amain_8cpp_a53e20780502ee29e529c8de83bf35967_icgraph" alt=""/></div>
+<map name="amain_8cpp_a53e20780502ee29e529c8de83bf35967_icgraph" id="amain_8cpp_a53e20780502ee29e529c8de83bf35967_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,251,47"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,56,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a743e225aa696c3df21af032a93536c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a743e225aa696c3df21af032a93536c88">&#9670;&nbsp;</a></span>update_position_local_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void update_position_local_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a>&#160;</td>
+          <td class="paramname"><em>ue4_helper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt;&#160;</td>
+          <td class="paramname"><em>flight_data_updated</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; std::mutex &gt;&#160;</td>
+          <td class="paramname"><em>mtx_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00069">69</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a743e225aa696c3df21af032a93536c88_cgraph.png" border="0" usemap="#amain_8cpp_a743e225aa696c3df21af032a93536c88_cgraph" alt=""/></div>
+<map name="amain_8cpp_a743e225aa696c3df21af032a93536c88_cgraph" id="amain_8cpp_a743e225aa696c3df21af032a93536c88_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,192,39"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a04550e6214480b0c1bdeb4755c99671d" title="更新无人机位置" alt="" coords="240,5,403,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="451,13,672,39"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="720,5,912,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a743e225aa696c3df21af032a93536c88_icgraph.png" border="0" usemap="#amain_8cpp_a743e225aa696c3df21af032a93536c88_icgraph" alt=""/></div>
+<map name="amain_8cpp_a743e225aa696c3df21af032a93536c88_icgraph" id="amain_8cpp_a743e225aa696c3df21af032a93536c88_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,291,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9565535bbf7ab38cc0a18e68b12dc214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9565535bbf7ab38cc0a18e68b12dc214">&#9670;&nbsp;</a></span>xplane_flight_data_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xplane_flight_data_mode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a1fdd8c693d7b59a43582748322752e7f">UE4Helper</a>&#160;</td>
+          <td class="paramname"><em>ue4_helper</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="main_8cpp.html#a36789f3a8960224de6ba3daabc6a12a7">Network</a>&#160;</td>
+          <td class="paramname"><em>network</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt;&#160;</td>
+          <td class="paramname"><em>flight_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="main_8cpp.html#af67c62bb69ef6a19cc93c54ca0a5b58c">FlightData</a> &gt;&#160;</td>
+          <td class="paramname"><em>flight_data_updated</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; std::mutex &gt;&#160;</td>
+          <td class="paramname"><em>mtx_ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="main_8cpp_source.html">main.cpp</a> 第 <a class="el" href="main_8cpp_source.html#l00038">38</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a9565535bbf7ab38cc0a18e68b12dc214_cgraph.png" border="0" usemap="#amain_8cpp_a9565535bbf7ab38cc0a18e68b12dc214_cgraph" alt=""/></div>
+<map name="amain_8cpp_a9565535bbf7ab38cc0a18e68b12dc214_cgraph" id="amain_8cpp_a9565535bbf7ab38cc0a18e68b12dc214_cgraph">
+<area shape="rect" title=" " alt="" coords="5,209,171,235"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a083eaf933d0c8ea675c3e4646bd92de2" title="校正UE4地图航向误差" alt="" coords="219,71,381,112"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#ab46364669d52257b1d23cbb5f1960baf" title="经纬高BLH转北东下坐标系" alt="" coords="223,136,377,177"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8" title="使用UDP接收数据的函数" alt="" coords="227,201,373,243"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#a89bbf6c2cead1f84c133a3347cb880c9" title="使用UDP发送数据的函数" alt="" coords="227,267,373,308"/>
+<area shape="rect" href="class_air_sim_tools_1_1_u_e4_helper.html#a04550e6214480b0c1bdeb4755c99671d" title="更新无人机位置" alt="" coords="219,332,381,373"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#aed2eb62f85287be415e65056a2a3ddd6" title="BLH &#45;&gt; ENU" alt="" coords="463,136,617,177"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a258ee3029b870dcc4eedea2a3caec883" title="BLH &#45;&gt; ECEF" alt="" coords="717,5,872,47"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a96dee2e1bc682db1c4a293c34929b111" title="y 軸を軸とした回転行列" alt="" coords="717,71,872,112"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a2ebd1cf92257898eae09a45a12a7257b" title="z 軸を軸とした回転行列" alt="" coords="717,136,872,177"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a27c418e2c44748e9f6e839c249595aca" title="2行列(3x3)の積" alt="" coords="717,201,872,243"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#aeea561573fd36ed830a8e187e4d10240" title="座標の回転" alt="" coords="717,267,872,308"/>
+<area shape="rect" href="class_air_sim_tools_1_1_b_l_h2_x_y_z.html#a927694c350b26693c65f7c8b73b3dba3" title="関数 N" alt="" coords="939,13,1109,39"/>
+<area shape="rect" href="class_air_sim_tools_1_1_network.html#af7ef1f7e331f6c287495a1e642c36029" title="初始化UDP，创建套接字，绑定端口" alt="" coords="467,201,613,243"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="429,339,651,366"/>
+<area shape="rect" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="699,332,891,373"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_a9565535bbf7ab38cc0a18e68b12dc214_icgraph.png" border="0" usemap="#amain_8cpp_a9565535bbf7ab38cc0a18e68b12dc214_icgraph" alt=""/></div>
+<map name="amain_8cpp_a9565535bbf7ab38cc0a18e68b12dc214_icgraph" id="amain_8cpp_a9565535bbf7ab38cc0a18e68b12dc214_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,269,32"/>
+<area shape="rect" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

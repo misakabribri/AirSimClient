@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examples: src/RpcClientGetter.cpp 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Examples
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">RpcClientGetter.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_rpc_client_getter_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_rpc_client_getter_8h.html">include/RpcClientGetter.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_air_sim_tools.html">AirSimTools</a></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;std::unique_ptr&lt;msr::airlib::MultirotorRpcLibClient&gt; <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a6989708f121d54d1ea01d8aa4b6e0f68">RpcClientGetter::client_ptr</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;std::mutex <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#ad5e0dbd36f0d71fce9b00b7f991b2f38">RpcClientGetter::mtx</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f">RpcClientGetter::Connect</a>()</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;{</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a6989708f121d54d1ea01d8aa4b6e0f68">client_ptr</a>-&gt;confirmConnection(); <span class="comment">//尝试连接</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a6989708f121d54d1ea01d8aa4b6e0f68">client_ptr</a>-&gt;reset(); <span class="comment">//服务端初始化</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d">   14</a></span>&#160;msr::airlib::MultirotorRpcLibClient&amp; <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d">RpcClientGetter::Get</a>()</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::lock_guard&lt;std::mutex&gt; guard(<a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#ad5e0dbd36f0d71fce9b00b7f991b2f38">mtx</a>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a6989708f121d54d1ea01d8aa4b6e0f68">client_ptr</a> == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a6989708f121d54d1ea01d8aa4b6e0f68">client_ptr</a> = std::make_unique&lt;msr::airlib::MultirotorRpcLibClient&gt;();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f">Connect</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    } <span class="comment">//利用加锁，多线程下确保client_ptr仅被初始化一次</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a6989708f121d54d1ea01d8aa4b6e0f68">client_ptr</a>-&gt;getConnectionState() != RpcLibClientBase::ConnectionState::Connected) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f">Connect</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    } <span class="comment">//断线重连</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="class_air_sim_tools_1_1_rpc_client_getter.html#a6989708f121d54d1ea01d8aa4b6e0f68">client_ptr</a>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="ttc" id="a_rpc_client_getter_8h_html"><div class="ttname"><a href="_rpc_client_getter_8h.html">RpcClientGetter.h</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_rpc_client_getter_html_a5b6b4e47c7e5a413015c702d9825734f"><div class="ttname"><a href="class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f">AirSimTools::RpcClientGetter::Connect</a></div><div class="ttdeci">static void Connect()</div><div class="ttdoc">尝试rpc连接至UE4</div><div class="ttdef"><b>Definition:</b> <a href="_rpc_client_getter_8cpp_source.html#l00008">RpcClientGetter.cpp:8</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_rpc_client_getter_html_a6989708f121d54d1ea01d8aa4b6e0f68"><div class="ttname"><a href="class_air_sim_tools_1_1_rpc_client_getter.html#a6989708f121d54d1ea01d8aa4b6e0f68">AirSimTools::RpcClientGetter::client_ptr</a></div><div class="ttdeci">static std::unique_ptr&lt; msr::airlib::MultirotorRpcLibClient &gt; client_ptr</div><div class="ttdoc">智能指针替代原生指针new</div><div class="ttdef"><b>Definition:</b> <a href="_rpc_client_getter_8h_source.html#l00013">RpcClientGetter.h:13</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_rpc_client_getter_html_a8ce16e16a2ce45041b2e74cefb75ed3d"><div class="ttname"><a href="class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d">AirSimTools::RpcClientGetter::Get</a></div><div class="ttdeci">static msr::airlib::MultirotorRpcLibClient &amp; Get()</div><div class="ttdoc">返回client实例</div><div class="ttdef"><b>Definition:</b> <a href="_rpc_client_getter_8cpp_source.html#l00014">RpcClientGetter.cpp:14</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_rpc_client_getter_html_ad5e0dbd36f0d71fce9b00b7f991b2f38"><div class="ttname"><a href="class_air_sim_tools_1_1_rpc_client_getter.html#ad5e0dbd36f0d71fce9b00b7f991b2f38">AirSimTools::RpcClientGetter::mtx</a></div><div class="ttdeci">static std::mutex mtx</div><div class="ttdoc">处理单例模式的多线程问题</div><div class="ttdef"><b>Definition:</b> <a href="_rpc_client_getter_8h_source.html#l00015">RpcClientGetter.h:15</a></div></div>
+<div class="ttc" id="anamespace_air_sim_tools_html"><div class="ttname"><a href="namespace_air_sim_tools.html">AirSimTools</a></div><div class="ttdoc">坐标转换函数</div><div class="ttdef"><b>Definition:</b> <a href="_calcu_anchor_point_8h_source.html#l00012">CalcuAnchorPoint.h:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

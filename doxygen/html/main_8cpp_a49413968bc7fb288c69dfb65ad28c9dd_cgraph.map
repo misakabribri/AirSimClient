@@ -1,0 +1,7 @@
+<map id="send_image" name="send_image">
+<area shape="rect" id="node1" title=" " alt="" coords="5,46,97,73"/>
+<area shape="rect" id="node2" href="$class_air_sim_tools_1_1_u_e4_helper.html#a710fc7faf57ce0f93d43693ff5ddd8a6" title="获取相机图片" alt="" coords="145,5,343,47"/>
+<area shape="rect" id="node5" href="$class_air_sim_tools_1_1_u_e4_helper.html#a2a81371aad623296a39be3d812c991f4" title="使用opencv进行图片编码" alt="" coords="163,71,325,112"/>
+<area shape="rect" id="node3" href="$class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="391,13,612,39"/>
+<area shape="rect" id="node4" href="$class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="660,5,852,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="CaptureGroundCameraImage" name="CaptureGroundCameraImage">
+<area shape="rect" id="node1" title="获取相机图片" alt="" coords="5,13,195,39"/>
+<area shape="rect" id="node2" href="$class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="243,13,464,39"/>
+<area shape="rect" id="node3" href="$class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="512,5,704,47"/>
+</map>

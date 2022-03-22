@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examples: include/net4all.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Examples
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">net4all.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="net4all_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _Net4all_Include_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _Net4all_Include_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;sys/stat.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#if defined(_MSC_VER) || defined(__BORLANDC__)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;winsock.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef WINSOCK_VERSION</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define  WINSOCK_VERSION    0x0002</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define  SIGPIPE        SIGINT</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;sys/socket.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;netinet/in.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;arpa/inet.h&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;netdb.h&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="net4all_8h.html#a26769957ec1a2beaf223f33b66ee64ab">   23</a></span>&#160;<span class="preprocessor">#define  INVALID_SOCKET     -1</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="net4all_8h.html#a633b0396ff93d336a088412a190a5072">   24</a></span>&#160;<span class="preprocessor">#define  SOCKET_ERROR       -1</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="net4all_8h.html#a5a3eb971b466278ada4f7f87399a537c">   25</a></span>&#160;<span class="preprocessor">#define  closesocket(s)     close(s)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">   26</a></span>&#160;<span class="keyword">typedef</span>  <span class="keywordtype">int</span>   <a class="code" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Prototype declearation for socket utilties</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Version:  Release 1.0</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// first create: 1999-10-28</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// Last modify:  2000-08-12</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// Last modify:  2002-05-20</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// Last modify:  2004-03-12</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Last modify:  2006-06-29</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">int</span>   <a class="code" href="net4all_8h.html#a48c33c482d8f50bdba5b20457a087a46">socketStartUp</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">void</span>  <a class="code" href="net4all_8h.html#a40df6b821d20a2b24675c76068c223ea">socketCleanUp</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="net4all_8h.html#a972a0c7b03bdaf842a4218ac0659b5bb">getHostAddress</a>(<span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="class_socket___u_d_p___r.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_socket___u_d_p___r.html">Socket_UDP_R</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_socket___u_d_p___r.html#ab8fc9c83dd0c6b800727240e351927e9">   53</a></span>&#160;    <a class="code" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>          <a class="code" href="class_socket___u_d_p___r.html#ab8fc9c83dd0c6b800727240e351927e9">s</a>;                 <span class="comment">// 本节点的SOCKET资源</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_socket___u_d_p___r.html#add3b268c63a590abf93aa9be91c06324">   54</a></span>&#160;    sockaddr_in     <a class="code" href="class_socket___u_d_p___r.html#add3b268c63a590abf93aa9be91c06324">stIt</a>;              <span class="comment">// 实际映射的网络地址</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_socket___u_d_p___r.html#ab85ff85aa1f60f4a1c1ca1225a9dad06">   55</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>  <a class="code" href="class_socket___u_d_p___r.html#ab85ff85aa1f60f4a1c1ca1225a9dad06">port</a>;              <span class="comment">// 实际绑定的接收端口</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="class_socket___u_d_p___r.html#ac2a5156358c4c6936ac8e14c80ac709c">Socket_UDP_R</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> p, <span class="keywordtype">char</span>* local = NULL);   <span class="comment">// 报文接收实体，指定端口，指定网卡（通过IP）</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_socket___u_d_p___r.html#ac2a5156358c4c6936ac8e14c80ac709c">Socket_UDP_R</a>();                                     <span class="comment">// 报文接收实体，动态分配端口</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="class_socket___u_d_p___r.html#ac2a5156358c4c6936ac8e14c80ac709c">Socket_UDP_R</a>(<span class="keywordtype">char</span>* new_version, <span class="keywordtype">int</span> n);             <span class="comment">// 报文接收实体，动态分配端口（指定网卡）</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="class_socket___u_d_p___r.html#ac2a5156358c4c6936ac8e14c80ac709c">Socket_UDP_R</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> p, <span class="keywordtype">int</span> n, <span class="keywordtype">int</span>);         <span class="comment">// 广播报文接收，指定端口（指定网卡）</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="class_socket___u_d_p___r.html#a560a3e55ef7530d2e591ca89c17087f6">~Socket_UDP_R</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___u_d_p___r.html#a33317646f26ae1a4da3f9edd64a930be">recv_data</a>(<span class="keywordtype">char</span>* data, <span class="keywordtype">int</span> length);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_socket___u_d_p___s.html">   67</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_socket___u_d_p___s.html">Socket_UDP_S</a></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="class_socket___u_d_p___s.html#ab8fc9c83dd0c6b800727240e351927e9">   70</a></span>&#160;    <a class="code" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>          <a class="code" href="class_socket___u_d_p___s.html#ab8fc9c83dd0c6b800727240e351927e9">s</a>;                  <span class="comment">// 本节点的SOCKET资源</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_socket___u_d_p___s.html#add3b268c63a590abf93aa9be91c06324">   71</a></span>&#160;    sockaddr_in     <a class="code" href="class_socket___u_d_p___s.html#add3b268c63a590abf93aa9be91c06324">stIt</a>;               <span class="comment">// 目的地址及端口信息</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_socket___u_d_p___s.html#a5809161e24fc9ea9122a74036fe618d9">Socket_UDP_S</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> port, <span class="keywordtype">char</span>* local = NULL);         <span class="comment">// 报文发送，广播方式，指定网卡（通过IP）</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_socket___u_d_p___s.html#a5809161e24fc9ea9122a74036fe618d9">Socket_UDP_S</a>(<span class="keywordtype">char</span>* dest, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> port, <span class="keywordtype">char</span>* local);  <span class="comment">// 报文发送，点对点方式，指定网卡（通过IP）</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_socket___u_d_p___s.html#a5809161e24fc9ea9122a74036fe618d9">Socket_UDP_S</a>(<span class="keywordtype">char</span>* host, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> port);               <span class="comment">// 报文发送，点对点方式，不限定网卡</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_socket___u_d_p___s.html#aa3a562ad6b1234421a89e5d41a9f2626">~Socket_UDP_S</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_socket___u_d_p___s.html#add25b9fc49d0b57e735e24510e2ddc4d">set_dest</a>(u_long host_addr, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> port); <span class="comment">// 设置目的地址及端口信息</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___u_d_p___s.html#a67f00fc3b24059dd1710b9cfa6c77175">send_data</a>(<span class="keywordtype">char</span>* data, <span class="keywordtype">int</span> length);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___u_d_p___s.html#a48b23cdb21601cd76aa8c0f9218edb40">init_socket_broadcast</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> port, <span class="keywordtype">char</span>* local = NULL);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="class_socket___t_c_p___c_s.html">   83</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_socket___t_c_p___c_s.html">Socket_TCP_CS</a></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_socket___t_c_p___c_s.html#a80cf0946ab4bd3c9f9629112e5bf3efd">init_server</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> p, <span class="keywordtype">int</span> n);     <span class="comment">// 初始化服务器端（指定第n个网卡）</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="class_socket___t_c_p___c_s.html#ad523098f3212e2c038aad7b120f26027">   88</a></span>&#160;    <a class="code" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>          <a class="code" href="class_socket___t_c_p___c_s.html#ad523098f3212e2c038aad7b120f26027">sSock</a>;              <span class="comment">// 服务器端SOCKET，对客户端实体无效</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_socket___t_c_p___c_s.html#a2e29020f4e0c170737e87b56b085d1ca">   89</a></span>&#160;    <a class="code" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>          <a class="code" href="class_socket___t_c_p___c_s.html#a2e29020f4e0c170737e87b56b085d1ca">cSock</a>;              <span class="comment">// 客户端SOCKET，用于接收和发送</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_socket___t_c_p___c_s.html#add3b268c63a590abf93aa9be91c06324">   90</a></span>&#160;    sockaddr_in     <a class="code" href="class_socket___t_c_p___c_s.html#add3b268c63a590abf93aa9be91c06324">stIt</a>;               <span class="comment">// 实际映射的网络地址</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_socket___t_c_p___c_s.html#ab85ff85aa1f60f4a1c1ca1225a9dad06">   91</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>  <a class="code" href="class_socket___t_c_p___c_s.html#ab85ff85aa1f60f4a1c1ca1225a9dad06">port</a>;               <span class="comment">// 实际分配的协议端口号</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="class_socket___t_c_p___c_s.html#a1cf0a3a9b93fcffa4673a4c7dd079e81">   92</a></span>&#160;    <span class="keywordtype">char</span>  <a class="code" href="class_socket___t_c_p___c_s.html#a1cf0a3a9b93fcffa4673a4c7dd079e81">m_HOST_IP</a>[16];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="class_socket___t_c_p___c_s.html#adc11b91640a4cfc0dcc4e9fcbff360f8">Socket_TCP_CS</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* host, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> p);   <span class="comment">// 初始化客户端，按指定的服务器地址和端口</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <a class="code" href="class_socket___t_c_p___c_s.html#adc11b91640a4cfc0dcc4e9fcbff360f8">Socket_TCP_CS</a>();                               <span class="comment">// 初始化服务器端，自动分配端口</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="class_socket___t_c_p___c_s.html#adc11b91640a4cfc0dcc4e9fcbff360f8">Socket_TCP_CS</a>(<span class="keywordtype">int</span>* new_version, <span class="keywordtype">int</span> n);       <span class="comment">// 初始化服务器端，自动分配端口（指定第n个网卡）</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_socket___t_c_p___c_s.html#adc11b91640a4cfc0dcc4e9fcbff360f8">Socket_TCP_CS</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> p, <span class="keywordtype">int</span> n = -1);     <span class="comment">// 初始化服务器端，指定协议端口（指定第n个网卡）</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">long</span> <a class="code" href="class_socket___t_c_p___c_s.html#a047516ee7d5fa05444a7a290f7798dea">accept_connection</a>();                      <span class="comment">// 服务器端函数，接受客户连接</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_socket___t_c_p___c_s.html#a46274ed155268e6193b079e2b8cfb1e7">close_connection</a>();                       <span class="comment">// 服务器端函数，关闭客户连接</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="class_socket___t_c_p___c_s.html#a3d57c55bc99979a3364940a042902f96">~Socket_TCP_CS</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_socket___t_c_p___c_s.html#a06349e49011585f2abee4a22ce105167">connect_to_server</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___t_c_p___c_s.html#a4126ce96ca042a71eea76ed9f90093de">recv_data</a>(<span class="keywordtype">char</span>* buff, <span class="keywordtype">int</span> length);         <span class="comment">// 单次接收指定长度的数据，返回实际接收的长度</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___t_c_p___c_s.html#a67f00fc3b24059dd1710b9cfa6c77175">send_data</a>(<span class="keywordtype">char</span>* data, <span class="keywordtype">int</span> length);         <span class="comment">// 单次发送指定长度的数据，返回实际发送的长度</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___t_c_p___c_s.html#a2825f03fd846adbe4098ab44f89ff822">recv_data_all</a>(<span class="keywordtype">char</span>* buff, <span class="keywordtype">int</span> length);     <span class="comment">// 循环接收指定长度的数据，返回实际接收的长度</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___t_c_p___c_s.html#ada513b7a6ce983679a70260f44980cd0">send_data_all</a>(<span class="keywordtype">char</span>* data, <span class="keywordtype">int</span> length);     <span class="comment">// 循环发送指定长度的数据，返回实际发送的长度</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">extern</span> <span class="keywordtype">char</span>* <a class="code" href="net4all_8h.html#a5d855130fdb93fb2e58dddad9fff3fa9">GetLocalIP</a>(<span class="keywordtype">int</span> n = 0);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="class_socket___m_c___s.html">  118</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_socket___m_c___s.html">Socket_MC_S</a></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="class_socket___m_c___s.html#ab8fc9c83dd0c6b800727240e351927e9">  121</a></span>&#160;    <a class="code" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a>          <a class="code" href="class_socket___m_c___s.html#ab8fc9c83dd0c6b800727240e351927e9">s</a>;                  <span class="comment">// 网络端口套接字</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="class_socket___m_c___s.html#add3b268c63a590abf93aa9be91c06324">  122</a></span>&#160;    sockaddr_in     <a class="code" href="class_socket___m_c___s.html#add3b268c63a590abf93aa9be91c06324">stIt</a>;               <span class="comment">// 地址信息</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="class_socket___m_c___s.html#ab85ff85aa1f60f4a1c1ca1225a9dad06">  123</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>  <a class="code" href="class_socket___m_c___s.html#ab85ff85aa1f60f4a1c1ca1225a9dad06">port</a>;               <span class="comment">// 协议端口号</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="class_socket___m_c___s.html#a3d2cc9ec9ac1162bfc2d36693353be52">Socket_MC_S</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="class_socket___m_c___s.html#abe56214acbf13c4ccc358e00e84108d5">~Socket_MC_S</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___m_c___s.html#a928e657fe45ff09cadf116071a00bd3f">init_socket_multicast</a>(<span class="keywordtype">char</span>* multicat_ip, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> p, <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___m_c___s.html#a67f00fc3b24059dd1710b9cfa6c77175">send_data</a>(<span class="keywordtype">char</span>* data, <span class="keywordtype">int</span> length);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_socket___m_c___s.html#a33317646f26ae1a4da3f9edd64a930be">recv_data</a>(<span class="keywordtype">char</span>* data, <span class="keywordtype">int</span> length);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;};</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_socket___m_c___s_html"><div class="ttname"><a href="class_socket___m_c___s.html">Socket_MC_S</a></div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00118">net4all.h:119</a></div></div>
+<div class="ttc" id="aclass_socket___m_c___s_html_a33317646f26ae1a4da3f9edd64a930be"><div class="ttname"><a href="class_socket___m_c___s.html#a33317646f26ae1a4da3f9edd64a930be">Socket_MC_S::recv_data</a></div><div class="ttdeci">int recv_data(char *data, int length)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00676">net4all.cpp:676</a></div></div>
+<div class="ttc" id="aclass_socket___m_c___s_html_a3d2cc9ec9ac1162bfc2d36693353be52"><div class="ttname"><a href="class_socket___m_c___s.html#a3d2cc9ec9ac1162bfc2d36693353be52">Socket_MC_S::Socket_MC_S</a></div><div class="ttdeci">Socket_MC_S()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00567">net4all.cpp:567</a></div></div>
+<div class="ttc" id="aclass_socket___m_c___s_html_a67f00fc3b24059dd1710b9cfa6c77175"><div class="ttname"><a href="class_socket___m_c___s.html#a67f00fc3b24059dd1710b9cfa6c77175">Socket_MC_S::send_data</a></div><div class="ttdeci">int send_data(char *data, int length)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00666">net4all.cpp:666</a></div></div>
+<div class="ttc" id="aclass_socket___m_c___s_html_a928e657fe45ff09cadf116071a00bd3f"><div class="ttname"><a href="class_socket___m_c___s.html#a928e657fe45ff09cadf116071a00bd3f">Socket_MC_S::init_socket_multicast</a></div><div class="ttdeci">int init_socket_multicast(char *multicat_ip, unsigned short p, int n)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00583">net4all.cpp:583</a></div></div>
+<div class="ttc" id="aclass_socket___m_c___s_html_ab85ff85aa1f60f4a1c1ca1225a9dad06"><div class="ttname"><a href="class_socket___m_c___s.html#ab85ff85aa1f60f4a1c1ca1225a9dad06">Socket_MC_S::port</a></div><div class="ttdeci">unsigned short port</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00123">net4all.h:123</a></div></div>
+<div class="ttc" id="aclass_socket___m_c___s_html_ab8fc9c83dd0c6b800727240e351927e9"><div class="ttname"><a href="class_socket___m_c___s.html#ab8fc9c83dd0c6b800727240e351927e9">Socket_MC_S::s</a></div><div class="ttdeci">SOCKET s</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00121">net4all.h:121</a></div></div>
+<div class="ttc" id="aclass_socket___m_c___s_html_abe56214acbf13c4ccc358e00e84108d5"><div class="ttname"><a href="class_socket___m_c___s.html#abe56214acbf13c4ccc358e00e84108d5">Socket_MC_S::~Socket_MC_S</a></div><div class="ttdeci">~Socket_MC_S()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00577">net4all.cpp:577</a></div></div>
+<div class="ttc" id="aclass_socket___m_c___s_html_add3b268c63a590abf93aa9be91c06324"><div class="ttname"><a href="class_socket___m_c___s.html#add3b268c63a590abf93aa9be91c06324">Socket_MC_S::stIt</a></div><div class="ttdeci">sockaddr_in stIt</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00122">net4all.h:122</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html"><div class="ttname"><a href="class_socket___t_c_p___c_s.html">Socket_TCP_CS</a></div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00083">net4all.h:84</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a047516ee7d5fa05444a7a290f7798dea"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a047516ee7d5fa05444a7a290f7798dea">Socket_TCP_CS::accept_connection</a></div><div class="ttdeci">long accept_connection()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00453">net4all.cpp:453</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a06349e49011585f2abee4a22ce105167"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a06349e49011585f2abee4a22ce105167">Socket_TCP_CS::connect_to_server</a></div><div class="ttdeci">bool connect_to_server()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00369">net4all.cpp:369</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a1cf0a3a9b93fcffa4673a4c7dd079e81"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a1cf0a3a9b93fcffa4673a4c7dd079e81">Socket_TCP_CS::m_HOST_IP</a></div><div class="ttdeci">char m_HOST_IP[16]</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00092">net4all.h:92</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a2825f03fd846adbe4098ab44f89ff822"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a2825f03fd846adbe4098ab44f89ff822">Socket_TCP_CS::recv_data_all</a></div><div class="ttdeci">int recv_data_all(char *buff, int length)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00513">net4all.cpp:513</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a2e29020f4e0c170737e87b56b085d1ca"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a2e29020f4e0c170737e87b56b085d1ca">Socket_TCP_CS::cSock</a></div><div class="ttdeci">SOCKET cSock</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00089">net4all.h:89</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a3d57c55bc99979a3364940a042902f96"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a3d57c55bc99979a3364940a042902f96">Socket_TCP_CS::~Socket_TCP_CS</a></div><div class="ttdeci">~Socket_TCP_CS()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00481">net4all.cpp:481</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a4126ce96ca042a71eea76ed9f90093de"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a4126ce96ca042a71eea76ed9f90093de">Socket_TCP_CS::recv_data</a></div><div class="ttdeci">int recv_data(char *buff, int length)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00493">net4all.cpp:493</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a46274ed155268e6193b079e2b8cfb1e7"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a46274ed155268e6193b079e2b8cfb1e7">Socket_TCP_CS::close_connection</a></div><div class="ttdeci">void close_connection()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00475">net4all.cpp:475</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a67f00fc3b24059dd1710b9cfa6c77175"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a67f00fc3b24059dd1710b9cfa6c77175">Socket_TCP_CS::send_data</a></div><div class="ttdeci">int send_data(char *data, int length)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00503">net4all.cpp:503</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_a80cf0946ab4bd3c9f9629112e5bf3efd"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#a80cf0946ab4bd3c9f9629112e5bf3efd">Socket_TCP_CS::init_server</a></div><div class="ttdeci">void init_server(unsigned short p, int n)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00399">net4all.cpp:399</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_ab85ff85aa1f60f4a1c1ca1225a9dad06"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#ab85ff85aa1f60f4a1c1ca1225a9dad06">Socket_TCP_CS::port</a></div><div class="ttdeci">unsigned short port</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00091">net4all.h:91</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_ad523098f3212e2c038aad7b120f26027"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#ad523098f3212e2c038aad7b120f26027">Socket_TCP_CS::sSock</a></div><div class="ttdeci">SOCKET sSock</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00088">net4all.h:88</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_ada513b7a6ce983679a70260f44980cd0"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#ada513b7a6ce983679a70260f44980cd0">Socket_TCP_CS::send_data_all</a></div><div class="ttdeci">int send_data_all(char *data, int length)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00534">net4all.cpp:534</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_adc11b91640a4cfc0dcc4e9fcbff360f8"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#adc11b91640a4cfc0dcc4e9fcbff360f8">Socket_TCP_CS::Socket_TCP_CS</a></div><div class="ttdeci">Socket_TCP_CS()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00435">net4all.cpp:435</a></div></div>
+<div class="ttc" id="aclass_socket___t_c_p___c_s_html_add3b268c63a590abf93aa9be91c06324"><div class="ttname"><a href="class_socket___t_c_p___c_s.html#add3b268c63a590abf93aa9be91c06324">Socket_TCP_CS::stIt</a></div><div class="ttdeci">sockaddr_in stIt</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00090">net4all.h:90</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___r_html"><div class="ttname"><a href="class_socket___u_d_p___r.html">Socket_UDP_R</a></div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00050">net4all.h:51</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___r_html_a33317646f26ae1a4da3f9edd64a930be"><div class="ttname"><a href="class_socket___u_d_p___r.html#a33317646f26ae1a4da3f9edd64a930be">Socket_UDP_R::recv_data</a></div><div class="ttdeci">int recv_data(char *data, int length)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00195">net4all.cpp:195</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___r_html_a560a3e55ef7530d2e591ca89c17087f6"><div class="ttname"><a href="class_socket___u_d_p___r.html#a560a3e55ef7530d2e591ca89c17087f6">Socket_UDP_R::~Socket_UDP_R</a></div><div class="ttdeci">~Socket_UDP_R()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00189">net4all.cpp:189</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___r_html_ab85ff85aa1f60f4a1c1ca1225a9dad06"><div class="ttname"><a href="class_socket___u_d_p___r.html#ab85ff85aa1f60f4a1c1ca1225a9dad06">Socket_UDP_R::port</a></div><div class="ttdeci">unsigned short port</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00055">net4all.h:55</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___r_html_ab8fc9c83dd0c6b800727240e351927e9"><div class="ttname"><a href="class_socket___u_d_p___r.html#ab8fc9c83dd0c6b800727240e351927e9">Socket_UDP_R::s</a></div><div class="ttdeci">SOCKET s</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00053">net4all.h:53</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___r_html_ac2a5156358c4c6936ac8e14c80ac709c"><div class="ttname"><a href="class_socket___u_d_p___r.html#ac2a5156358c4c6936ac8e14c80ac709c">Socket_UDP_R::Socket_UDP_R</a></div><div class="ttdeci">Socket_UDP_R()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00113">net4all.cpp:113</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___r_html_add3b268c63a590abf93aa9be91c06324"><div class="ttname"><a href="class_socket___u_d_p___r.html#add3b268c63a590abf93aa9be91c06324">Socket_UDP_R::stIt</a></div><div class="ttdeci">sockaddr_in stIt</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00054">net4all.h:54</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___s_html"><div class="ttname"><a href="class_socket___u_d_p___s.html">Socket_UDP_S</a></div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00067">net4all.h:68</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___s_html_a48b23cdb21601cd76aa8c0f9218edb40"><div class="ttname"><a href="class_socket___u_d_p___s.html#a48b23cdb21601cd76aa8c0f9218edb40">Socket_UDP_S::init_socket_broadcast</a></div><div class="ttdeci">int init_socket_broadcast(unsigned short port, char *local=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00287">net4all.cpp:287</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___s_html_a5809161e24fc9ea9122a74036fe618d9"><div class="ttname"><a href="class_socket___u_d_p___s.html#a5809161e24fc9ea9122a74036fe618d9">Socket_UDP_S::Socket_UDP_S</a></div><div class="ttdeci">Socket_UDP_S(unsigned short port, char *local=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00207">net4all.cpp:207</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___s_html_a67f00fc3b24059dd1710b9cfa6c77175"><div class="ttname"><a href="class_socket___u_d_p___s.html#a67f00fc3b24059dd1710b9cfa6c77175">Socket_UDP_S::send_data</a></div><div class="ttdeci">int send_data(char *data, int length)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00277">net4all.cpp:277</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___s_html_aa3a562ad6b1234421a89e5d41a9f2626"><div class="ttname"><a href="class_socket___u_d_p___s.html#aa3a562ad6b1234421a89e5d41a9f2626">Socket_UDP_S::~Socket_UDP_S</a></div><div class="ttdeci">~Socket_UDP_S()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00321">net4all.cpp:321</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___s_html_ab8fc9c83dd0c6b800727240e351927e9"><div class="ttname"><a href="class_socket___u_d_p___s.html#ab8fc9c83dd0c6b800727240e351927e9">Socket_UDP_S::s</a></div><div class="ttdeci">SOCKET s</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00070">net4all.h:70</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___s_html_add25b9fc49d0b57e735e24510e2ddc4d"><div class="ttname"><a href="class_socket___u_d_p___s.html#add25b9fc49d0b57e735e24510e2ddc4d">Socket_UDP_S::set_dest</a></div><div class="ttdeci">void set_dest(u_long host_addr, unsigned short port)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00271">net4all.cpp:271</a></div></div>
+<div class="ttc" id="aclass_socket___u_d_p___s_html_add3b268c63a590abf93aa9be91c06324"><div class="ttname"><a href="class_socket___u_d_p___s.html#add3b268c63a590abf93aa9be91c06324">Socket_UDP_S::stIt</a></div><div class="ttdeci">sockaddr_in stIt</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00071">net4all.h:71</a></div></div>
+<div class="ttc" id="anet4all_8h_html_a40df6b821d20a2b24675c76068c223ea"><div class="ttname"><a href="net4all_8h.html#a40df6b821d20a2b24675c76068c223ea">socketCleanUp</a></div><div class="ttdeci">void socketCleanUp()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00048">net4all.cpp:48</a></div></div>
+<div class="ttc" id="anet4all_8h_html_a48c33c482d8f50bdba5b20457a087a46"><div class="ttname"><a href="net4all_8h.html#a48c33c482d8f50bdba5b20457a087a46">socketStartUp</a></div><div class="ttdeci">int socketStartUp()</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00034">net4all.cpp:34</a></div></div>
+<div class="ttc" id="anet4all_8h_html_a5d855130fdb93fb2e58dddad9fff3fa9"><div class="ttname"><a href="net4all_8h.html#a5d855130fdb93fb2e58dddad9fff3fa9">GetLocalIP</a></div><div class="ttdeci">char * GetLocalIP(int n=0)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00555">net4all.cpp:555</a></div></div>
+<div class="ttc" id="anet4all_8h_html_a8dc8083897335125630f1af5dafd5831"><div class="ttname"><a href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a></div><div class="ttdeci">int SOCKET</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00026">net4all.h:26</a></div></div>
+<div class="ttc" id="anet4all_8h_html_a972a0c7b03bdaf842a4218ac0659b5bb"><div class="ttname"><a href="net4all_8h.html#a972a0c7b03bdaf842a4218ac0659b5bb">getHostAddress</a></div><div class="ttdeci">unsigned long getHostAddress(int n)</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8cpp_source.html#l00056">net4all.cpp:56</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

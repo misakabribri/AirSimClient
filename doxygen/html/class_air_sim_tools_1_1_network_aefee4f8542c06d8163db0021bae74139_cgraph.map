@@ -1,0 +1,5 @@
+<map id="TCPSend" name="TCPSend">
+<area shape="rect" id="node1" title="TCP通信发送" alt="" coords="5,42,83,69"/>
+<area shape="rect" id="node2" href="$class_socket___t_c_p___c_s.html#a06349e49011585f2abee4a22ce105167" title=" " alt="" coords="137,5,312,47"/>
+<area shape="rect" id="node3" href="$class_socket___t_c_p___c_s.html#a67f00fc3b24059dd1710b9cfa6c77175" title=" " alt="" coords="131,71,319,98"/>
+</map>

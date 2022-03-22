@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Examples: include/Network.h 源文件</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Examples
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Network.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_network_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_camera_data_8h.html">include/CameraData.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_flight_data_8h.html">include/FlightData.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_x_plane_data_8h.html">include/XPlaneData.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;Winsock2.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;opencv/cv.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//#include &lt;opencv/cxcore.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//#include &lt;opencv2/core/core.hpp&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">//#include &lt;opencv2/highgui/highgui.hpp&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_air_sim_tools.html">AirSimTools</a></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespace_air_sim_tools.html#a06c5ba3ea0559b3be95012042e567ba9">   16</a></span>&#160;constexpr <span class="keywordtype">int</span> <a class="code" href="namespace_air_sim_tools.html#a06c5ba3ea0559b3be95012042e567ba9">TCP_IMAGE_MAX_SIZE</a> = 1920 * 1080 * 3;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="namespace_air_sim_tools.html#ac9c90fb20eda3f95a298e7b4a9026810">   18</a></span>&#160;constexpr <span class="keywordtype">int</span> <a class="code" href="namespace_air_sim_tools.html#ac9c90fb20eda3f95a298e7b4a9026810">SPLIT_BUFFER</a> = 5000;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_split_buffer.html">   21</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_air_sim_tools_1_1_split_buffer.html">SplitBuffer</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_split_buffer.html#a2d27bc794e7dec7d50a620cfdd609db2">   24</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_air_sim_tools_1_1_split_buffer.html#a2d27bc794e7dec7d50a620cfdd609db2">split_buffer_image_index</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_split_buffer.html#a3aa199114ced403244efcdd720fac413">   26</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="struct_air_sim_tools_1_1_split_buffer.html#a3aa199114ced403244efcdd720fac413">single_buffer</a>[<a class="code" href="namespace_air_sim_tools.html#ac9c90fb20eda3f95a298e7b4a9026810">SPLIT_BUFFER</a>];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_t_c_p_image_data.html">   30</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_air_sim_tools_1_1_t_c_p_image_data.html">TCPImageData</a></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a5347ce8217059cd9c863ce5613e8151b">   33</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a5347ce8217059cd9c863ce5613e8151b">tcp_data_header</a>[128];</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a89acb41e221479c20c38e7a7c9e08993">   35</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a89acb41e221479c20c38e7a7c9e08993">tcp_image_size</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#aa8751e647d08237186d9af9bcbd88a71">   37</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#aa8751e647d08237186d9af9bcbd88a71">tcp_imag_index</a> = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a189ebc628317cd14df464f569379ad8b">   38</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a189ebc628317cd14df464f569379ad8b">time_stamp_us</a>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a2e6fe7ca430736cb87cc6483e9843923">   39</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a2e6fe7ca430736cb87cc6483e9843923">time_stamp_s</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a8125ecbaa2af6cb0ab35966c3019265e">   41</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a8125ecbaa2af6cb0ab35966c3019265e">flight_data</a>[7];</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#ae96b6f18e9694adf2dc28ffd9d1a2c3d">   43</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#ae96b6f18e9694adf2dc28ffd9d1a2c3d">camera_data</a>[7];</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a4ed79270e5e21c84b1d0931e45768f15">   45</a></span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code" href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a4ed79270e5e21c84b1d0931e45768f15">tcp_image_rgb_data</a>[<a class="code" href="namespace_air_sim_tools.html#a06c5ba3ea0559b3be95012042e567ba9">TCP_IMAGE_MAX_SIZE</a>];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_network.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_air_sim_tools_1_1_network.html">Network</a></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_network.html#acf6ad082b1de4e32635268edb2e06846">   52</a></span>&#160;    <a class="code" href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a> <a class="code" href="class_air_sim_tools_1_1_network.html#acf6ad082b1de4e32635268edb2e06846">UDPSrvSock</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_air_sim_tools_1_1_network.html#af7ef1f7e331f6c287495a1e642c36029">UDPInitial</a>(std::string ip_addr, u_short port);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8">UDPReceive</a>(std::string ip_addr, u_short port, std::vector&lt;char&gt;&amp; recv_buff, SOCKADDR&amp; sender_addr);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_network.html#ae9374417f9d2022da59cd246a73ad0a7">   71</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_air_sim_tools_1_1_network.html#ae9374417f9d2022da59cd246a73ad0a7">UDPReceive</a>(std::string ip_addr, u_short port, std::vector&lt;char&gt;&amp; recv_buff)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        SOCKADDR sender_addr;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8">UDPReceive</a>(ip_addr, port, recv_buff, sender_addr);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_air_sim_tools_1_1_network.html#a89bbf6c2cead1f84c133a3347cb880c9">UDPSend</a>(std::string ip_addr, u_short port, std::vector&lt;char&gt;&amp; recv_buff, SOCKADDR&amp; sender_addr);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_network.html#a5ab1af8080b80f9efb0b4d781592280e">   87</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_air_sim_tools_1_1_network.html#a5ab1af8080b80f9efb0b4d781592280e">UDPSend</a>(std::string ip_addr, u_short port, std::vector&lt;char&gt;&amp; recv_buff)</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        SOCKADDR sender_addr;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="class_air_sim_tools_1_1_network.html#a89bbf6c2cead1f84c133a3347cb880c9">UDPSend</a>(ip_addr, port, recv_buff, sender_addr);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_network.html#a43fe1ce5e6fcacc9fdd30001bbe1f315">  101</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_air_sim_tools_1_1_network.html#a43fe1ce5e6fcacc9fdd30001bbe1f315">Network::TCPSend</a>(std::string ip_addr, u_short port, std::vector&lt;uchar&gt;&amp; tcp_send_data, <span class="keywordtype">int</span> image_index, <a class="code" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a> flight_data, <a class="code" href="struct_air_sim_tools_1_1_camera_data.html">CameraData</a> camera_data);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="struct_air_sim_tools_1_1_flight_data.html">FlightData</a> <a class="code" href="class_air_sim_tools_1_1_network.html#a094e622e3e57450402750d2e41e94166">DecodeByteMATLAB</a>(std::vector&lt;char&gt;&amp; recv_buff);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_air_sim_tools_1_1_network.html#a61fe7bfac74360ed13ade75896f185e9">  111</a></span>&#160;    <a class="code" href="struct_air_sim_tools_1_1_x_plane_data.html">XPlaneData</a> <a class="code" href="class_air_sim_tools_1_1_network.html#a61fe7bfac74360ed13ade75896f185e9">Network::DecodeByteXPlane</a>(std::vector&lt;char&gt;&amp; recv_buff);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="ttc" id="a_camera_data_8h_html"><div class="ttname"><a href="_camera_data_8h.html">CameraData.h</a></div></div>
+<div class="ttc" id="a_flight_data_8h_html"><div class="ttname"><a href="_flight_data_8h.html">FlightData.h</a></div></div>
+<div class="ttc" id="a_x_plane_data_8h_html"><div class="ttname"><a href="_x_plane_data_8h.html">XPlaneData.h</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html">AirSimTools::Network</a></div><div class="ttdoc">用于通信的工具人</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00049">Network.h:50</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html_a094e622e3e57450402750d2e41e94166"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html#a094e622e3e57450402750d2e41e94166">AirSimTools::Network::DecodeByteMATLAB</a></div><div class="ttdeci">FlightData DecodeByteMATLAB(std::vector&lt; char &gt; &amp;recv_buff)</div><div class="ttdoc">UDP通信解帧函数（来自Matlab的UDP模块）</div><div class="ttdef"><b>Definition:</b> <a href="_network_8cpp_source.html#l00127">Network.cpp:127</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html_a43fe1ce5e6fcacc9fdd30001bbe1f315"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html#a43fe1ce5e6fcacc9fdd30001bbe1f315">AirSimTools::Network::TCPSend</a></div><div class="ttdeci">void Network::TCPSend(std::string ip_addr, u_short port, std::vector&lt; uchar &gt; &amp;tcp_send_data, int image_index, FlightData flight_data, CameraData camera_data)</div><div class="ttdoc">提供图源数据的TCP服务端</div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html_a5ab1af8080b80f9efb0b4d781592280e"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html#a5ab1af8080b80f9efb0b4d781592280e">AirSimTools::Network::UDPSend</a></div><div class="ttdeci">void UDPSend(std::string ip_addr, u_short port, std::vector&lt; char &gt; &amp;recv_buff)</div><div class="ttdoc">使用UDP发送数据的函数（重载）</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00087">Network.h:87</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html_a61fe7bfac74360ed13ade75896f185e9"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html#a61fe7bfac74360ed13ade75896f185e9">AirSimTools::Network::DecodeByteXPlane</a></div><div class="ttdeci">XPlaneData Network::DecodeByteXPlane(std::vector&lt; char &gt; &amp;recv_buff)</div><div class="ttdoc">UDP通信解帧函数（来自X-Plane）</div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html_a6640f096eae1d000a1dbd3a7d6e39ee8"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html#a6640f096eae1d000a1dbd3a7d6e39ee8">AirSimTools::Network::UDPReceive</a></div><div class="ttdeci">void UDPReceive(std::string ip_addr, u_short port, std::vector&lt; char &gt; &amp;recv_buff, SOCKADDR &amp;sender_addr)</div><div class="ttdoc">使用UDP接收数据的函数</div><div class="ttdef"><b>Definition:</b> <a href="_network_8cpp_source.html#l00040">Network.cpp:40</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html_a89bbf6c2cead1f84c133a3347cb880c9"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html#a89bbf6c2cead1f84c133a3347cb880c9">AirSimTools::Network::UDPSend</a></div><div class="ttdeci">void UDPSend(std::string ip_addr, u_short port, std::vector&lt; char &gt; &amp;recv_buff, SOCKADDR &amp;sender_addr)</div><div class="ttdoc">使用UDP发送数据的函数</div><div class="ttdef"><b>Definition:</b> <a href="_network_8cpp_source.html#l00053">Network.cpp:53</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html_acf6ad082b1de4e32635268edb2e06846"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html#acf6ad082b1de4e32635268edb2e06846">AirSimTools::Network::UDPSrvSock</a></div><div class="ttdeci">SOCKET UDPSrvSock</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00052">Network.h:52</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html_ae9374417f9d2022da59cd246a73ad0a7"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html#ae9374417f9d2022da59cd246a73ad0a7">AirSimTools::Network::UDPReceive</a></div><div class="ttdeci">void UDPReceive(std::string ip_addr, u_short port, std::vector&lt; char &gt; &amp;recv_buff)</div><div class="ttdoc">使用UDP接收数据的函数（重载）</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00071">Network.h:71</a></div></div>
+<div class="ttc" id="aclass_air_sim_tools_1_1_network_html_af7ef1f7e331f6c287495a1e642c36029"><div class="ttname"><a href="class_air_sim_tools_1_1_network.html#af7ef1f7e331f6c287495a1e642c36029">AirSimTools::Network::UDPInitial</a></div><div class="ttdeci">void UDPInitial(std::string ip_addr, u_short port)</div><div class="ttdoc">初始化UDP，创建套接字，绑定端口</div><div class="ttdef"><b>Definition:</b> <a href="_network_8cpp_source.html#l00015">Network.cpp:15</a></div></div>
+<div class="ttc" id="anamespace_air_sim_tools_html"><div class="ttname"><a href="namespace_air_sim_tools.html">AirSimTools</a></div><div class="ttdoc">坐标转换函数</div><div class="ttdef"><b>Definition:</b> <a href="_calcu_anchor_point_8h_source.html#l00012">CalcuAnchorPoint.h:13</a></div></div>
+<div class="ttc" id="anamespace_air_sim_tools_html_a06c5ba3ea0559b3be95012042e567ba9"><div class="ttname"><a href="namespace_air_sim_tools.html#a06c5ba3ea0559b3be95012042e567ba9">AirSimTools::TCP_IMAGE_MAX_SIZE</a></div><div class="ttdeci">constexpr int TCP_IMAGE_MAX_SIZE</div><div class="ttdoc">RGB三个通道，最大分辨率1920*1080，为了不改变通信协议，本变量没有放在TCPImageData类中</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00016">Network.h:16</a></div></div>
+<div class="ttc" id="anamespace_air_sim_tools_html_ac9c90fb20eda3f95a298e7b4a9026810"><div class="ttname"><a href="namespace_air_sim_tools.html#ac9c90fb20eda3f95a298e7b4a9026810">AirSimTools::SPLIT_BUFFER</a></div><div class="ttdeci">constexpr int SPLIT_BUFFER</div><div class="ttdoc">数据包的大小,为了不改变通信协议，本变量没有放在SplitBuffer类中</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00018">Network.h:18</a></div></div>
+<div class="ttc" id="anet4all_8h_html_a8dc8083897335125630f1af5dafd5831"><div class="ttname"><a href="net4all_8h.html#a8dc8083897335125630f1af5dafd5831">SOCKET</a></div><div class="ttdeci">int SOCKET</div><div class="ttdef"><b>Definition:</b> <a href="net4all_8h_source.html#l00026">net4all.h:26</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_camera_data_html"><div class="ttname"><a href="struct_air_sim_tools_1_1_camera_data.html">AirSimTools::CameraData</a></div><div class="ttdoc">保存相机位置和姿态的结构体</div><div class="ttdef"><b>Definition:</b> <a href="_camera_data_8h_source.html#l00008">CameraData.h:9</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_flight_data_html"><div class="ttname"><a href="struct_air_sim_tools_1_1_flight_data.html">AirSimTools::FlightData</a></div><div class="ttdoc">保存飞行器位置和姿态的结构体</div><div class="ttdef"><b>Definition:</b> <a href="_flight_data_8h_source.html#l00008">FlightData.h:9</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_split_buffer_html"><div class="ttname"><a href="struct_air_sim_tools_1_1_split_buffer.html">AirSimTools::SplitBuffer</a></div><div class="ttdoc">通信分包</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00021">Network.h:22</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_split_buffer_html_a2d27bc794e7dec7d50a620cfdd609db2"><div class="ttname"><a href="struct_air_sim_tools_1_1_split_buffer.html#a2d27bc794e7dec7d50a620cfdd609db2">AirSimTools::SplitBuffer::split_buffer_image_index</a></div><div class="ttdeci">int split_buffer_image_index</div><div class="ttdoc">图片索引</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00024">Network.h:24</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_split_buffer_html_a3aa199114ced403244efcdd720fac413"><div class="ttname"><a href="struct_air_sim_tools_1_1_split_buffer.html#a3aa199114ced403244efcdd720fac413">AirSimTools::SplitBuffer::single_buffer</a></div><div class="ttdeci">char single_buffer[SPLIT_BUFFER]</div><div class="ttdoc">单个数据包</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00026">Network.h:26</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_t_c_p_image_data_html"><div class="ttname"><a href="struct_air_sim_tools_1_1_t_c_p_image_data.html">AirSimTools::TCPImageData</a></div><div class="ttdoc">图片数据缓存</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00030">Network.h:31</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_t_c_p_image_data_html_a189ebc628317cd14df464f569379ad8b"><div class="ttname"><a href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a189ebc628317cd14df464f569379ad8b">AirSimTools::TCPImageData::time_stamp_us</a></div><div class="ttdeci">int time_stamp_us</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00038">Network.h:38</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_t_c_p_image_data_html_a2e6fe7ca430736cb87cc6483e9843923"><div class="ttname"><a href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a2e6fe7ca430736cb87cc6483e9843923">AirSimTools::TCPImageData::time_stamp_s</a></div><div class="ttdeci">int time_stamp_s</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00039">Network.h:39</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_t_c_p_image_data_html_a4ed79270e5e21c84b1d0931e45768f15"><div class="ttname"><a href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a4ed79270e5e21c84b1d0931e45768f15">AirSimTools::TCPImageData::tcp_image_rgb_data</a></div><div class="ttdeci">unsigned char tcp_image_rgb_data[TCP_IMAGE_MAX_SIZE]</div><div class="ttdoc">图片数据容器</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00045">Network.h:45</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_t_c_p_image_data_html_a5347ce8217059cd9c863ce5613e8151b"><div class="ttname"><a href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a5347ce8217059cd9c863ce5613e8151b">AirSimTools::TCPImageData::tcp_data_header</a></div><div class="ttdeci">char tcp_data_header[128]</div><div class="ttdoc">图片数据帧头</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00033">Network.h:33</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_t_c_p_image_data_html_a8125ecbaa2af6cb0ab35966c3019265e"><div class="ttname"><a href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a8125ecbaa2af6cb0ab35966c3019265e">AirSimTools::TCPImageData::flight_data</a></div><div class="ttdeci">float flight_data[7]</div><div class="ttdoc">飞行器目标的位姿</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00041">Network.h:41</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_t_c_p_image_data_html_a89acb41e221479c20c38e7a7c9e08993"><div class="ttname"><a href="struct_air_sim_tools_1_1_t_c_p_image_data.html#a89acb41e221479c20c38e7a7c9e08993">AirSimTools::TCPImageData::tcp_image_size</a></div><div class="ttdeci">int tcp_image_size</div><div class="ttdoc">图片数据长度</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00035">Network.h:35</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_t_c_p_image_data_html_aa8751e647d08237186d9af9bcbd88a71"><div class="ttname"><a href="struct_air_sim_tools_1_1_t_c_p_image_data.html#aa8751e647d08237186d9af9bcbd88a71">AirSimTools::TCPImageData::tcp_imag_index</a></div><div class="ttdeci">int tcp_imag_index</div><div class="ttdoc">图片索引</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00037">Network.h:37</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_t_c_p_image_data_html_ae96b6f18e9694adf2dc28ffd9d1a2c3d"><div class="ttname"><a href="struct_air_sim_tools_1_1_t_c_p_image_data.html#ae96b6f18e9694adf2dc28ffd9d1a2c3d">AirSimTools::TCPImageData::camera_data</a></div><div class="ttdeci">float camera_data[7]</div><div class="ttdoc">相机的位姿</div><div class="ttdef"><b>Definition:</b> <a href="_network_8h_source.html#l00043">Network.h:43</a></div></div>
+<div class="ttc" id="astruct_air_sim_tools_1_1_x_plane_data_html"><div class="ttname"><a href="struct_air_sim_tools_1_1_x_plane_data.html">AirSimTools::XPlaneData</a></div><div class="ttdoc">保存X-Plane数据的结构体</div><div class="ttdef"><b>Definition:</b> <a href="_x_plane_data_8h_source.html#l00007">XPlaneData.h:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

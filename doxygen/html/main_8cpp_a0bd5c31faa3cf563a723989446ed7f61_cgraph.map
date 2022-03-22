@@ -1,0 +1,11 @@
+<map id="save_image" name="save_image">
+<area shape="rect" id="node1" title=" " alt="" coords="5,173,96,199"/>
+<area shape="rect" id="node2" href="$class_air_sim_tools_1_1_calcu_anchor_point.html#aa9706843a63d9eda8702988edf461545" title="计算锚点UV" alt="" coords="150,75,335,116"/>
+<area shape="rect" id="node5" href="$class_air_sim_tools_1_1_calcu_anchor_point.html#a415863004ff239f1b31d3947b85112fd" title="计算平动矩阵" alt="" coords="413,136,587,177"/>
+<area shape="rect" id="node6" href="$class_air_sim_tools_1_1_u_e4_helper.html#a710fc7faf57ce0f93d43693ff5ddd8a6" title="获取相机图片" alt="" coords="144,195,341,236"/>
+<area shape="rect" id="node9" href="$namespace_air_sim_tools.html#a1930205490d9cccbe62851ab7327031d" title=" " alt="" coords="169,261,316,287"/>
+<area shape="rect" id="node3" href="$class_air_sim_tools_1_1_calcu_anchor_point.html#a7629c804b535ba6dacf674d1f4b151e0" title="计算内参矩阵" alt="" coords="413,5,587,47"/>
+<area shape="rect" id="node4" href="$class_air_sim_tools_1_1_calcu_anchor_point.html#a783416b777bb25bbc3c8b30d3a4fc809" title="计算旋转矩阵" alt="" coords="413,71,587,112"/>
+<area shape="rect" id="node7" href="$class_air_sim_tools_1_1_rpc_client_getter.html#a8ce16e16a2ce45041b2e74cefb75ed3d" title="返回client实例" alt="" coords="389,202,611,229"/>
+<area shape="rect" id="node8" href="$class_air_sim_tools_1_1_rpc_client_getter.html#a5b6b4e47c7e5a413015c702d9825734f" title="尝试rpc连接至UE4" alt="" coords="659,195,851,236"/>
+</map>

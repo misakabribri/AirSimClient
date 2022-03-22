@@ -1,0 +1,6 @@
+<map id="CalculateAnchorPoint" name="CalculateAnchorPoint">
+<area shape="rect" id="node1" title="计算锚点UV" alt="" coords="5,56,152,83"/>
+<area shape="rect" id="node2" href="$class_air_sim_tools_1_1_calcu_anchor_point.html#a7629c804b535ba6dacf674d1f4b151e0" title="计算内参矩阵" alt="" coords="205,5,316,32"/>
+<area shape="rect" id="node3" href="$class_air_sim_tools_1_1_calcu_anchor_point.html#a783416b777bb25bbc3c8b30d3a4fc809" title="计算旋转矩阵" alt="" coords="207,56,314,83"/>
+<area shape="rect" id="node4" href="$class_air_sim_tools_1_1_calcu_anchor_point.html#a415863004ff239f1b31d3947b85112fd" title="计算平动矩阵" alt="" coords="200,107,321,133"/>
+</map>
