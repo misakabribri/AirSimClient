@@ -107,9 +107,9 @@ void update_position_fixed_point(UE4Helper ue4_helper, std::shared_ptr<FlightDat
 {
     while (1) {
         std::lock_guard<std::mutex> guard(*mtx_ptr);
-        flight_data_updated->position[0] = 200.0f; //180
-        flight_data_updated->position[1] = 120.0f; //100
-        flight_data_updated->position[2] = -10.0f;
+        flight_data_updated->position[0] = 180.0f; //180
+        flight_data_updated->position[1] = 140.0f; //100
+        flight_data_updated->position[2] = -30.0f;
         flight_data_updated->attitude[0] = -10.0f / 57.3f; //-0.3
         flight_data_updated->attitude[1] = 0.0f;
         flight_data_updated->attitude[2] = 3.8f; //3.6
@@ -129,12 +129,18 @@ void send_image(Network network, UE4Helper ue4_helper, std::shared_ptr<FlightDat
         UE4Helper::ImageCaptureResult image_capture_result = ue4_helper.CaptureGroundCameraImage(UE4Helper::CameraMode::ground_mode);
         std::vector<uchar> encoded_image = ue4_helper.ImageEncoder(image_capture_result);
         if (!encoded_image.empty()) {
-            network.TCPSend("192.168.5.230", 17580, encoded_image, image_index, *flight_data_updated, camera_data);
+            network.TCPSend("192.168.5.180", 17580, encoded_image, image_index, *flight_data_updated, camera_data);
             image_index++;
         }
     }
 }
 
+/// @brief 采集图源模式
+/// @param network
+/// @param ue4_helper
+/// @param anchor_point
+/// @param flight_data_updated
+/// @todo 尚未全部完成
 void save_image(Network network, UE4Helper ue4_helper, AnchorPoint anchor_point, std::shared_ptr<FlightData> flight_data_updated)
 {
     cv::Mat left_wing_obj = anchor_point.TranslationMatrix(-0.350f, -1.450f, -0.027f);
@@ -142,21 +148,37 @@ void save_image(Network network, UE4Helper ue4_helper, AnchorPoint anchor_point,
     cv::Mat left_tail_obj = anchor_point.TranslationMatrix(-1.211f, -0.3785f, -0.3315f);
     cv::Mat right_tail_obj = anchor_point.TranslationMatrix(-1.211f, 0.3785f, -0.3315f);
     cv::Mat mid_foot_obj = anchor_point.TranslationMatrix(0.709f, 0.0f, 0.330f);
+    cv::Mat body_center_obj = anchor_point.TranslationMatrix(0.0f, 0.0f, 0.0f);
     int image_index = 0;
     cv::Mat PointUV;
     cv::Mat Point3D_c;
+    cv::Mat left_wing_uv;
+    cv::Mat right_wing_uv;
+    cv::Mat left_tail_uv;
+    cv::Mat right_tail_uv;
+    cv::Mat mid_foot_uv;
+    cv::Mat body_center_uv;
     while (1) {
         CameraData camera_data_this = ue4_helper.getCameraInfo("ExternalCamera");
-        anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, left_wing_obj);
-        AirSimTools::coutmat(PointUV, "left_wing_uv");
-        anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, right_wing_obj);
-        AirSimTools::coutmat(PointUV, "right_wing_uv");
-        anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, left_tail_obj);
-        AirSimTools::coutmat(PointUV, "left_tail_uv");
-        anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, right_tail_obj);
-        AirSimTools::coutmat(PointUV, "right_tail_uv");
-        anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, mid_foot_obj);
-        AirSimTools::coutmat(PointUV, "mid_foot_uv");
+        FlightData flight_data_this = *flight_data_updated;
+        //anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, left_wing_obj);
+        //AirSimTools::coutmat(PointUV, "left_wing_uv");
+        //anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, right_wing_obj);
+        //AirSimTools::coutmat(PointUV, "right_wing_uv");
+        //anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, left_tail_obj);
+        //AirSimTools::coutmat(PointUV, "left_tail_uv");
+        //anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, right_tail_obj);
+        //AirSimTools::coutmat(PointUV, "right_tail_uv");
+        //anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, mid_foot_obj);
+        //AirSimTools::coutmat(PointUV, "mid_foot_uv");
+        //anchor_point.CalculateAnchorPoint(*flight_data_updated, camera_data_this, PointUV, Point3D_c, body_center_obj);
+        //AirSimTools::coutmat(PointUV, "body_center_uv");
+        anchor_point.CalculateAnchorPoint(flight_data_this, camera_data_this, left_wing_uv, Point3D_c, left_wing_obj);
+        anchor_point.CalculateAnchorPoint(flight_data_this, camera_data_this, right_wing_uv, Point3D_c, right_wing_obj);
+        anchor_point.CalculateAnchorPoint(flight_data_this, camera_data_this, left_tail_uv, Point3D_c, left_tail_obj);
+        anchor_point.CalculateAnchorPoint(flight_data_this, camera_data_this, right_tail_uv, Point3D_c, right_tail_obj);
+        anchor_point.CalculateAnchorPoint(flight_data_this, camera_data_this, mid_foot_uv, Point3D_c, mid_foot_obj);
+        anchor_point.CalculateAnchorPoint(flight_data_this, camera_data_this, body_center_uv, Point3D_c, body_center_obj);
         UE4Helper::ImageCaptureResult image_capture_result = ue4_helper.CaptureGroundCameraImage(UE4Helper::CameraMode::ground_mode);
         int Width = image_capture_result.response.at(0).width;
         int Height = image_capture_result.response.at(0).height;
@@ -187,9 +209,33 @@ void save_image(Network network, UE4Helper ue4_helper, AnchorPoint anchor_point,
         }
         else {
             std::cout << "image saved: " << image_file_name << std::endl;
-            //std::cout << "render time: " << image_capture_result.render_time * 1E3f << " ms" << std::endl;
-            //std::cout << "write time: " << render_time_temp * 1E3f << " ms" << std::endl;
+            //std::cout << "write jpg time: " << render_time_temp * 1E3f << " ms" << std::endl;
         }
+
+        //msr::airlib::ClockBase* clock = msr::airlib::ClockFactory::get(); //初始化clock
+        //auto start_nanos = clock->nowNanos(); //开始计时
+        std::string filepath = Utils::stringf("E:/ProgramCache/AirSimDataOutput/annotations/%d.txt", image_index);
+        std::fstream f;
+        double min_u = (left_wing_uv.at<double>(0, 0) + right_wing_uv.at<double>(0, 0) - abs(left_wing_uv.at<double>(0, 0) - right_wing_uv.at<double>(0, 0))) / 2;
+        double max_u = left_wing_uv.at<double>(0, 0) + right_wing_uv.at<double>(0, 0) - min_u;
+        double min_v = right_tail_uv.at<double>(0, 1);
+        double max_v = mid_foot_uv.at<double>(0, 1);
+        double delta_u1 = 0.02 * (max_u - min_u);
+        double delta_u2 = 0.05 * (max_u - min_u);
+        double delta_v = 0.15 * (max_v - min_v);
+        f.open(filepath, std::ios::out);
+        //f << "flight_wjg_rpy_uv " << std::setprecision(10) << weidu << " " << jingdu << " " << gaodu << " " << flight_roll << " " << flight_pitch << " " << flight_yaw << " " << flight_u << " " << flight_v << std::endl;
+        //f << "camera_wjg_rpy " << camera_latitude << " " << camera_longititude << " " << camera_altitude << " " << camera_roll << " " << camera_pitch << " " << camera_yaw << std::endl;
+        f << "0 " << min_u / 1280 << " " << min_v / 720 << " " << max_u / 1280 << " " << max_v / 720 << std::endl;
+        f << "2 " << (left_tail_uv.at<double>(0, 0) - delta_u1) / 1280 << " " << (left_tail_uv.at<double>(0, 1) - delta_v) / 720 << " " << (left_tail_uv.at<double>(0, 0) + delta_u1) / 1280 << " " << (left_tail_uv.at<double>(0, 1) + delta_v) / 720 << std::endl;
+        f << "4 " << (right_tail_uv.at<double>(0, 0) - delta_u1) / 1280 << " " << (right_tail_uv.at<double>(0, 1) - delta_v) / 720 << " " << (right_tail_uv.at<double>(0, 0) + delta_u1) / 1280 << " " << (right_tail_uv.at<double>(0, 1) + delta_v) / 720 << std::endl;
+        f << "1 " << (left_wing_uv.at<double>(0, 0) - delta_u2) / 1280 << " " << (left_wing_uv.at<double>(0, 1) - delta_v) / 720 << " " << (left_wing_uv.at<double>(0, 0) + delta_u2) / 1280 << " " << (left_wing_uv.at<double>(0, 1) + delta_v) / 720 << std::endl;
+        f << "5 " << (right_wing_uv.at<double>(0, 0) - delta_u2) / 1280 << " " << (right_wing_uv.at<double>(0, 1) - delta_v) / 720 << " " << (right_wing_uv.at<double>(0, 0) + delta_u2) / 1280 << " " << (right_wing_uv.at<double>(0, 1) + delta_v) / 720 << std::endl;
+        f << "3 " << (mid_foot_uv.at<double>(0, 0) - delta_u1) / 1280 << " " << (mid_foot_uv.at<double>(0, 1) - delta_v) / 720 << " " << (mid_foot_uv.at<double>(0, 0) + delta_u1) / 1280 << " " << (mid_foot_uv.at<double>(0, 1) + delta_v) / 720 << std::endl;
+        f.close();
+        //double render_time_temp = clock->elapsedSince(start_nanos); //停止计时
+        //std::cout << "write txt time: " << render_time_temp * 1E3f << " ms" << std::endl;
+
         image_index++;
         //Sleep(15);
     }
@@ -215,8 +261,10 @@ int main()
         thread_send_image.detach();
     } break;
     case 2: {
-        std::thread thread_update_position_local_mode(update_position_local_mode, ue4_helper, flight_data_updated, mtx_ptr);
-        thread_update_position_local_mode.detach();
+        std::thread thread_xplane_flight_data_mode(xplane_flight_data_mode, ue4_helper, network, flight_data, flight_data_updated, mtx_ptr);
+        thread_xplane_flight_data_mode.detach();
+        //std::thread thread_update_position_local_mode(update_position_local_mode, ue4_helper, flight_data_updated, mtx_ptr);
+        //thread_update_position_local_mode.detach();
         std::thread thread_save_image(save_image, network, ue4_helper, anchor_point, flight_data_updated);
         thread_save_image.detach();
     } break;
